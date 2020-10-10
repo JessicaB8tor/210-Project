@@ -15,6 +15,8 @@ Some things I want this application to be able to do is:
 - Show the notes in each scale (what are the flats and sharps?)
 - Display different types of scales(e.g blues, minor pentatonic, major)
 - Diagrams showing shapes/notes on the fretboard
+- Mark chords/scales as learned
+- Save chords as favourites/or to practice
 - Picture of the circle of fifths
 - Allow a user to listen to notes and chords
 - Displays all the places where you can find the same 
@@ -28,6 +30,13 @@ This project is of particular interest to me because it is
 something that I, myself would find extremely useful, and I think
 others would too. I can also kill two birds with one stone by
 expanding my knowledge on theory and programming at the same time!
+
+##User Stories
+- As a user, I want to select chords and add it to a favourite's list
+- As a user, I want to select chords and add it to a chord progression idea
+- As a user, I want to select a scale and view the notes in it
+- As a user, I want to select a chord and view all the notes in it
+
 
 
 

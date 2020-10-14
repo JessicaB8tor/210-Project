@@ -15,7 +15,7 @@ class FavouriteChordsTest {
     public void setup() {
        cMajor = new MajorChord("CMajor", "C", "E", "G");
        dMajor = new MajorChord("DMajor", "D", "F#", "A");
-       eMajor = new MajorChord("Emajor", "E", "G#", "B");
+       eMajor = new MajorChord("EMajor", "E", "G#", "B");
        fc = new FavouriteChords();
    }
 
@@ -101,5 +101,19 @@ class FavouriteChordsTest {
        assertTrue(fc.includes(eMajor));
    }
 
+   @Test
+    public void testGetAllNames() {
+       fc.addToFavourites(cMajor);
+       fc.addToFavourites(dMajor);
+       fc.addToFavourites(eMajor);
+       assertEquals("CMajor", fc.getAllNames().get(0));
+       assertEquals("DMajor", fc.getAllNames().get(1));
+       assertEquals("EMajor", fc.getAllNames().get(2));
+   }
+
+   @Test
+    public void testGetAllNamesEmpty() {
+       assertEquals("Empty", fc.getAllNames().get(0));
+   }
 
 }

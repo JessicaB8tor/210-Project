@@ -1,10 +1,8 @@
 package ui;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import model.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,7 +10,7 @@ import java.util.Scanner;
 //Many methods inside this UI class are inspired by the TellerApp UI class
 //including the methods runGuitarTheoryApp, init, displayMenu, and ProcessCommand
 public class GuitarTheoryApp {
-    private FavouriteChords favourites;
+    public  FavouriteChords favourites;
     private ChordProgression progression;
     private Scanner input;
     public static final MajorChord C_MAJOR = new MajorChord("CMajor", "C", "E", "G");
@@ -31,6 +29,8 @@ public class GuitarTheoryApp {
     public static final MinorChord A_MINOR = new MinorChord("AMinor", "A", "C", "E");
     public static final MinorChord B_MINOR = new MinorChord("BMinor", "B", "D", "F#");
     public static List<MinorChord> MINOR_CHORDS;
+    public static List<String>  CHORD_OPTIONS;
+    private Boolean displayMainMenu;
 
     //EFFECTS: run the guitar theory application
     public GuitarTheoryApp() {
@@ -80,6 +80,8 @@ public class GuitarTheoryApp {
         MINOR_CHORDS.add(G_MINOR);
         MINOR_CHORDS.add(A_MINOR);
         MINOR_CHORDS.add(B_MINOR);
+        CHORD_OPTIONS = new ArrayList<String>();
+        CHORD_OPTIONS.add("Major Chords");
     }
 
 
@@ -90,7 +92,11 @@ public class GuitarTheoryApp {
         System.out.println("\tfaves -> Favourites");
         System.out.println("\tprogression -> My Chord Progression");
         System.out.println("\tq -> Quit");
+    }
 
+    private void displayChordMenu() {
+        System.out.println("\tmajc -> Major Chords");
+        System.out.println("\tminc -> Minor Chords");
     }
 
 
@@ -98,8 +104,7 @@ public class GuitarTheoryApp {
     //EFFECTS: processes user command
     private void processCommand(String command) {
         if (command.equals("c")) {
-            System.out.println("\tmajc -> Major Chords");
-            System.out.println("\tminc -> Minor Chords");
+            displayChordMenu();
         } else if (command.equals("s")) {
             System.out.println("\tmajs -> Major Scales");
             System.out.println("\tmps -> Minor Pentatonic Scales");
@@ -112,6 +117,7 @@ public class GuitarTheoryApp {
         } else if (command.equals("mps")) {
             processScaleCommand("mps");
         } else if (command.equals("faves")) {
+            displayFavouritesList();
             addToFavouritesList();
         } else if (command.equals("progression")) {
             makeProgression();
@@ -224,19 +230,19 @@ public class GuitarTheoryApp {
     //EFFECTS: processes major scale commands to print names of notes in scale
     private void processMajorScaleCommands(String command) {
         if (command.equals("cmajorscale")) {
-            System.out.println(C_MAJOR.getAllNotes());
+            System.out.println(MajorScale.C_MAJOR.getAllNotes());
         } else if (command.equals("dmajorscale")) {
-            System.out.println(D_MAJOR.getAllNotes());
+            System.out.println(MajorScale.D_MAJOR.getAllNotes());
         } else if (command.equals("emajorscale")) {
-            System.out.println(E_MAJOR.getAllNotes());
+            System.out.println(MajorScale.E_MAJOR.getAllNotes());
         } else if (command.equals("fmajorscale")) {
-            System.out.println(F_MAJOR.getAllNotes());
+            System.out.println(MajorScale.F_MAJOR.getAllNotes());
         } else if (command.equals("gmajorscale")) {
-            System.out.println(G_MAJOR.getAllNotes());
+            System.out.println(MajorScale.G_MAJOR.getAllNotes());
         } else if (command.equals("amajorscale")) {
-            System.out.println(A_MAJOR.getAllNotes());
+            System.out.println(MajorScale.A_MAJOR.getAllNotes());
         } else if (command.equals("bmajorscale")) {
-            System.out.println(B_MAJOR.getAllNotes());
+            System.out.println(MajorScale.B_MAJOR.getAllNotes());
         } else {
             processMinorPentatonicScaleCommands(command);
         }
@@ -318,6 +324,11 @@ public class GuitarTheoryApp {
         }
 
     }
+
+    private void displayFavouritesList() {
+        System.out.println(favourites.getAllNames());
+    }
+
 
     //MODIFIES: this
     //EFFECTS: adds chords to a user's "My Chord Progression" list

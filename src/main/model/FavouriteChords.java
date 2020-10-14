@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FavouriteChords {
-    public List<Chord> favourites;
+    private List<Chord> favourites;
 
 
     //EFFECTS: Creates an empty list of user's favourite chords
@@ -38,6 +38,19 @@ public class FavouriteChords {
     //EFFECTS: returns true if favourite's list includes given chord
     public boolean includes(Chord c) {
         return favourites.contains(c);
+    }
+
+    //EFFECTS: return List of all names of chords in favourite's list, or "Empty" is empty
+    public List<String> getAllNames() {
+        List<String> faves = new ArrayList<String>();
+        for (Chord c: favourites) {
+            faves.add(c.getName());
+
+        }
+        if (faves.isEmpty()) {
+            faves.add("Empty");
+        }
+        return faves;
     }
 
 

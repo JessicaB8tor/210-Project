@@ -6,6 +6,8 @@ import java.util.List;
 public class MajorScale extends Scale {
     private String note6;
     private String note7;
+
+
     public static final MajorScale C_MAJOR = new
             MajorScale("CMajor", "C", "D", "E", "F", "G", "A", "B");
     public static final MajorScale D_MAJOR = new

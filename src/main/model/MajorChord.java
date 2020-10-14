@@ -12,7 +12,7 @@ public class MajorChord extends Chord {
     public static final MajorChord A_MAJOR = new MajorChord("AMajor", "A", "C#", "E");
     public static final MajorChord B_MAJOR = new MajorChord("BMajor", "B", "D#", "F#");
     public static List<MajorChord> MAJOR_CHORDS;
-    public static String chords;
+
 
     public MajorChord(String name, String first, String third, String fifth) {
 
@@ -25,13 +25,7 @@ public class MajorChord extends Chord {
         MAJOR_CHORDS.add(G_MAJOR);
         MAJOR_CHORDS.add(A_MAJOR);
         MAJOR_CHORDS.add(B_MAJOR);
-        this.chords = new String();
     }
 
-    public String getChordNames(List<MajorChord> mcs) {
-        for (MajorChord mc : mcs) {
-            chords = chords + mc.getName();
-        }
-        return chords;
-    }
+
 }

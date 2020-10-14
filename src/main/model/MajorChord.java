@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MajorChord extends Chord {
+    /*
     public static final MajorChord C_MAJOR = new MajorChord("CMajor", "C", "E", "G");
     public static final MajorChord D_MAJOR = new MajorChord("DMajor", "D", "F#", "A");
     public static final MajorChord E_MAJOR = new MajorChord("EMajor", "E", "G#", "B");
@@ -13,10 +14,13 @@ public class MajorChord extends Chord {
     public static final MajorChord B_MAJOR = new MajorChord("BMajor", "B", "D#", "F#");
     public static List<MajorChord> MAJOR_CHORDS;
 
+     */
+
 
     public MajorChord(String name, String first, String third, String fifth) {
 
         super(name, first, third, fifth);
+        /*
         MAJOR_CHORDS = new ArrayList<MajorChord>();
         MAJOR_CHORDS.add(C_MAJOR);
         MAJOR_CHORDS.add(D_MAJOR);
@@ -27,5 +31,8 @@ public class MajorChord extends Chord {
         MAJOR_CHORDS.add(B_MAJOR);
     }
 
+         */
 
+
+    }
 }

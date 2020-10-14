@@ -144,4 +144,20 @@ public class ChordProgressionTest {
         assertEquals(3, cp.numTimesInProgression(cMajor));
     }
 
+    @Test
+    public void testGetAllNames() {
+        cp.addToProgression(cMajor);
+        cp.addToProgression(cMajor);
+        cp.addToProgression(dMajor);
+        assertEquals("CMajor", cp.getAllNames().get(0));
+        assertEquals("CMajor", cp.getAllNames().get(1));
+        assertEquals("DMajor", cp.getAllNames().get(2));
+    }
+
+    @Test
+    public void testGetAllNamesEmpty() {
+        assertEquals(0, cp.length());
+        assertEquals("Empty", cp.getAllNames().get(0));
+    }
+
 }

@@ -120,6 +120,7 @@ public class GuitarTheoryApp {
             displayFavouritesList();
             addToFavouritesList();
         } else if (command.equals("progression")) {
+            displayMyProgression();
             makeProgression();
         } else {
             processMajorChordCommands(command);
@@ -380,6 +381,10 @@ public class GuitarTheoryApp {
         }
 
 
+    }
+
+    private void displayMyProgression() {
+        System.out.println(progression.getAllNames());
     }
 }
 

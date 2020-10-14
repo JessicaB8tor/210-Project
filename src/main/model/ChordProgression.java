@@ -56,6 +56,18 @@ public class ChordProgression {
 
     }
 
+    //EFFECTS: return List of names of all chords in My Progression, or "Empty" if empty
+    public List<String> getAllNames() {
+        List<String> myprog = new ArrayList<String>();
+        for (Chord c: progression) {
+            myprog.add(c.getName());
+        }
+        if (myprog.isEmpty()) {
+            myprog.add("Empty");
+        }
+        return myprog;
+    }
+
 
 }
 

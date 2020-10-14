@@ -1,6 +1,5 @@
 package ui;
 
-import com.sun.xml.internal.org.jvnet.mimepull.MIMEConfig;
 import model.*;
 
 import java.util.ArrayList;

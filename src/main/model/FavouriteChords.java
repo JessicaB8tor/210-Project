@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FavouriteChords {
-    private List<Chord> favourites;
+    public List<Chord> favourites;
 
 
     //EFFECTS: Creates an empty list of user's favourite chords

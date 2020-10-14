@@ -6,20 +6,21 @@ import java.util.List;
 public class MajorScale extends Scale {
     private String note6;
     private String note7;
-    private static final MajorScale cMajor = new
+    public static final MajorScale C_MAJOR = new
             MajorScale("CMajor", "C", "D", "E", "F", "G", "A", "B");
-    private static final MajorScale dMajor = new
+    public static final MajorScale D_MAJOR = new
             MajorScale("DMajor", "D", "E", "F#", "G", "A", "B", "C#");
-    private static final MajorScale eMajor = new
+    public static final MajorScale E_MAJOR = new
             MajorScale("EMajor", "E", "F#", "G#", "A", "B", "C#", "D#");
-    private static final MajorScale fMajor = new
+    public static final MajorScale F_MAJOR = new
             MajorScale("FMajor", "F", "G", "A", "Bb", "C", "D", "E");
-    private static final MajorScale gMajor = new
+    public static final MajorScale G_MAJOR = new
             MajorScale("GMajor", "G", "A", "B", "C", "D", "E", "F#");
-    private static final  MajorScale aMajor = new
+    public static final  MajorScale A_MAJOR = new
             MajorScale("AMajor", "A", "B", "C#", "D", "E", "F#", "G#");
-    private static final MajorScale bMajor = new
+    public static final MajorScale B_MAJOR = new
             MajorScale("BMajor", "B", "C#", "D#", "E", "F#", "G#", "A#");
+    public static List<MajorScale> MAJOR_SCALES;
 
     public MajorScale(String name, String note1, String note2, String note3, String note4, String note5,
                       String note6, String note7) {
@@ -31,6 +32,14 @@ public class MajorScale extends Scale {
         this.note5 = note5;
         this.note6 = note6;
         this.note7 = note7;
+        MAJOR_SCALES = new ArrayList<MajorScale>();
+        MAJOR_SCALES.add(C_MAJOR);
+        MAJOR_SCALES.add(D_MAJOR);
+        MAJOR_SCALES.add(E_MAJOR);
+        MAJOR_SCALES.add(F_MAJOR);
+        MAJOR_SCALES.add(G_MAJOR);
+        MAJOR_SCALES.add(A_MAJOR);
+        MAJOR_SCALES.add(B_MAJOR);
 
 
     }

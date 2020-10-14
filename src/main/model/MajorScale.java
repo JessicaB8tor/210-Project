@@ -24,6 +24,7 @@ public class MajorScale extends Scale {
             MajorScale("BMajor", "B", "C#", "D#", "E", "F#", "G#", "A#");
     public static List<MajorScale> MAJOR_SCALES;
 
+    //EFFECTS: Constructs a Major Scale made of a name, and 7 different notes
     public MajorScale(String name, String note1, String note2, String note3, String note4, String note5,
                       String note6, String note7) {
         this.name = name;

@@ -20,6 +20,7 @@ public class MinorPentatonic extends Scale {
             new MinorPentatonic("BMinorPentatonic", "B", "D", "E", "F#", "A");
     public static List<MinorPentatonic> MINOR_PENTATONIC_SCALES;
 
+    //EFFECTS: Constructs a Minor Pentatonic scale made up of a name and 5 different notes
     public MinorPentatonic(String name, String note1, String note2, String note3, String note4, String note5) {
         this.name = name;
         this.note1 = note1;

@@ -94,6 +94,7 @@ public class GuitarTheoryApp {
         System.out.println("\tq -> Quit");
     }
 
+    //EFFECTS: displays chord options to user
     private void displayChordMenu() {
         System.out.println("\tmajc -> Major Chords");
         System.out.println("\tminc -> Minor Chords");
@@ -326,6 +327,8 @@ public class GuitarTheoryApp {
 
     }
 
+
+    //EFFECTS: Displays name of all chords currently in favourite's list
     private void displayFavouritesList() {
         System.out.println(favourites.getAllNames());
     }
@@ -383,6 +386,8 @@ public class GuitarTheoryApp {
 
     }
 
+
+    //EFFECTS: Displays the names of chords currently in progression
     private void displayMyProgression() {
         System.out.println(progression.getAllNames());
     }

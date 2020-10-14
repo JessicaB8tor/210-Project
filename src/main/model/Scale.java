@@ -47,6 +47,7 @@ public abstract class Scale {
 
     }
 
+    //EFFECTS: gets all names of all notes in a scale
     public abstract List<String> getAllNotes();
 
 

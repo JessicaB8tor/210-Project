@@ -5,12 +5,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+//Test class for MinorPentatonicScale class
 public class MinorPentatonicScaleTest {
-    private MinorPentatonic bMinorPentatonic;
+    private MinorPentatonicScale bMinorPentatonic;
 
     @BeforeEach
     public void setup() {
-        bMinorPentatonic = new MinorPentatonic
+        bMinorPentatonic = new MinorPentatonicScale
                 ("BMinorPentatonic", "B", "D", "E", "F#", "A");
     }
 

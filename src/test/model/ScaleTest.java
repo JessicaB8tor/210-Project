@@ -5,14 +5,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+//Test class for abstract Scale class
 public class ScaleTest {
-    private MinorPentatonic cMinorPentatonic;
+    private MinorPentatonicScale cMinorPentatonic;
     private MajorScale eMajor;
 
 
     @BeforeEach
     public void setup() {
-       cMinorPentatonic = new MinorPentatonic
+       cMinorPentatonic = new MinorPentatonicScale
                ("CMinorPentatonic", "C", "Eb", "F", "G", "Bb");
        eMajor = new MajorScale
                ("EMajor", "E", "F#", "G#", "A", "B", "C#", "D#");

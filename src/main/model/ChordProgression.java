@@ -3,6 +3,8 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+//This class deals with a Chord Progression which is a list of chords that a user can add to and remove
+//to as they please
 public class ChordProgression {
     private List<Chord> progression;
 

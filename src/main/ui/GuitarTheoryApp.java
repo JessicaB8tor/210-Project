@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+//A Guitar focused music theory application
 //This class is heavily inspired by the TellerApp repo
 //Many methods inside this UI class are inspired by the TellerApp UI class
 //including the methods runGuitarTheoryApp, init, displayMenu, and ProcessCommand
@@ -255,25 +256,25 @@ public class GuitarTheoryApp {
     //EFFECTS: processes minor pentatonic scale commands to print name of notes in scale
     private void processMinorPentatonicScaleCommands(String command) {
         if (command.equals("cmp")) {
-            System.out.println(MinorPentatonic.C_MINOR_PENTATONIC.getAllNotes());
+            System.out.println(MinorPentatonicScale.C_MINOR_PENTATONIC.getAllNotes());
         } else if (command.equals("dmp")) {
-            System.out.println(MinorPentatonic.D_MINOR_PENTATONIC.getAllNotes());
+            System.out.println(MinorPentatonicScale.D_MINOR_PENTATONIC.getAllNotes());
         } else if (command.equals("emp")) {
-            System.out.println(MinorPentatonic.E_MINOR_PENTATONIC.getAllNotes());
+            System.out.println(MinorPentatonicScale.E_MINOR_PENTATONIC.getAllNotes());
         } else if (command.equals("fmp")) {
-            System.out.println(MinorPentatonic.F_MINOR_PENTATONIC.getAllNotes());
+            System.out.println(MinorPentatonicScale.F_MINOR_PENTATONIC.getAllNotes());
         } else if (command.equals("gmp")) {
-            System.out.println(MinorPentatonic.G_MINOR_PENTATONIC.getAllNotes());
+            System.out.println(MinorPentatonicScale.G_MINOR_PENTATONIC.getAllNotes());
         } else if (command.equals("amp")) {
-            System.out.println(MinorPentatonic.A_MINOR_PENTATONIC.getAllNotes());
+            System.out.println(MinorPentatonicScale.A_MINOR_PENTATONIC.getAllNotes());
         } else if (command.equals("bmp")) {
-            System.out.println(MinorPentatonic.B_MINOR_PENTATONIC.getAllNotes());
+            System.out.println(MinorPentatonicScale.B_MINOR_PENTATONIC.getAllNotes());
         } else {
             System.out.println("Invalid Input");
         }
     }
 
-
+    //REQUIRES: User must input either 1 or 2
     //MODIFIES: this
     //EFFECTS: adds a selected chord to user's favourite's list
     private void addToFavouritesList() {
@@ -334,6 +335,7 @@ public class GuitarTheoryApp {
     }
 
 
+    //REQUIRES: User must input either a 1 or 2
     //MODIFIES: this
     //EFFECTS: adds chords to a user's "My Chord Progression" list
     private void makeProgression() {
@@ -362,7 +364,7 @@ public class GuitarTheoryApp {
             progression.addToProgression(MAJOR_CHORDS.get(selection));
             System.out.println("Added  " + MAJOR_CHORDS.get(selection).getName() + " to My Chord Progression");
         } else {
-            System.out.println("Nothing was added to My Chord Progression");
+            System.out.println("Invalid Input, Nothing was added to My Chord Progression");
         }
 
     }
@@ -380,7 +382,7 @@ public class GuitarTheoryApp {
             progression.addToProgression(MINOR_CHORDS.get(selection));
             System.out.println("Added  " + MINOR_CHORDS.get(selection).getName() + " to My Chord Progression");
         } else {
-            System.out.println("Nothing was added to My Chord Progression");
+            System.out.println("Invalid Input, Nothing was added to My Chord Progression");
         }
 
 

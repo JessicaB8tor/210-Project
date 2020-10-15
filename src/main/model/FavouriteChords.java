@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+// This class deals with a list of chords that the user has selected as favourites
 public class FavouriteChords {
     private List<Chord> favourites;
 

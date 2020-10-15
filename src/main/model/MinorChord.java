@@ -1,5 +1,6 @@
 package model;
 
+//Deals with a type of chord called a Minor chord
 public class MinorChord extends Chord {
 
     //EFFECTS: Constructs a Minor Chord made up of a name, first, third, and fifth

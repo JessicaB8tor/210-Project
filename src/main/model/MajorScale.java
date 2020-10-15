@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+//Deals with a type of 7 note scale called a Major Scale
 public class MajorScale extends Scale {
     private String note6;
     private String note7;

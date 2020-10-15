@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+//test class for chord progression class
 public class ChordProgressionTest {
     private ChordProgression cp;
     private MajorChord cMajor;

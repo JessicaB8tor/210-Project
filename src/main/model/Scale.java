@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+//Deals with different types of music scales, that can have different number/type of notes in them
 public abstract class Scale {
     protected String name;
     protected String note1;

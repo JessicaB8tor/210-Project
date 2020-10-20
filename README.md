@@ -32,10 +32,15 @@ others would too. I can also kill two birds with one stone by
 expanding my knowledge on theory and programming at the same time!
 
 ##User Stories
+##Phase 1
 - As a user, I want to select chords and add it to a favourite's list
 - As a user, I want to select chords and add it to a chord progression idea
 - As a user, I want to select a scale and view the notes in it
 - As a user, I want to select a chord and view all the notes in it
+##Phase 2
+- As a user, I want to be able to save "My Chord Progression"
+- As a user, I want to be able to load "My Chord Progression" from file
+
 
 
 

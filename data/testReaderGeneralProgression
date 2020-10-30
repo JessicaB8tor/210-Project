@@ -1,0 +1,16 @@
+{
+  "progression": [ {
+    "name": "CMajor",
+    "first": "C",
+    "third": "E",
+    "fifth": "G"
+  },
+    {
+      "name": "EMinor",
+      "first": "E",
+      "third": "G",
+      "fifth": "B"
+    }
+  ],
+  "name": "My chord progression"
+}

@@ -18,13 +18,13 @@ public class ChordProgressionTest {
         cMajor = new MajorChord("CMajor", "C", "E", "G");
         dMajor = new MajorChord("DMajor", "D", "F#", "A");
         eMajor = new MajorChord("EMajor", "E", "G#", "B");
-        cp = new ChordProgression();
+        cp = new ChordProgression("My chord progression");
 
     }
 
     @Test
     public void testConstructor() {
-        ChordProgression prog = new ChordProgression();
+        ChordProgression prog = new ChordProgression("My chord progression");
         assertEquals(0, prog.length());
     }
 

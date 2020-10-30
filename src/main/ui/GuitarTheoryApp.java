@@ -18,8 +18,7 @@ public class GuitarTheoryApp {
     public  FavouriteChords favourites;
     private ChordProgression progression;
     private Scanner input;
-    private static final String JSON_STORE = "./data/progression.json";
-    private ChordProgression workRoom;
+    private static final String JSON_STORE = "./data/Progression.json";
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
     public static final MajorChord C_MAJOR = new MajorChord("CMajor", "C", "E", "G");
@@ -39,7 +38,6 @@ public class GuitarTheoryApp {
     public static final MinorChord B_MINOR = new MinorChord("BMinor", "B", "D", "F#");
     public static List<MinorChord> MINOR_CHORDS;
     public static List<String>  CHORD_OPTIONS;
-    private Boolean displayMainMenu;
 
     //EFFECTS: run the guitar theory application
     public GuitarTheoryApp() throws FileNotFoundException {
@@ -103,8 +101,8 @@ public class GuitarTheoryApp {
         System.out.println("\ts -> Scales");
         System.out.println("\tfaves -> Favourites");
         System.out.println("\tprogression -> My Chord Progression");
-        System.out.println("\ts -> save work room to file");
-        System.out.println("\tl -> load work room from file");
+        System.out.println("\tsave -> save work room to file");
+        System.out.println("\tload -> load work room from file");
         System.out.println("\tq -> Quit");
     }
 
@@ -130,9 +128,9 @@ public class GuitarTheoryApp {
         } else if (command.equals("s")) {
             System.out.println("\tmajs -> Major Scales");
             System.out.println("\tmps -> Minor Pentatonic Scales");
-        } else if (command.equals("s")) {
+        } else if (command.equals("save")) {
             saveProgression();
-        } else if (command.equals("l")) {
+        } else if (command.equals("load")) {
             loadProgression();
             processChordCommand("minc");
         } else if (command.equals("majs")) {
@@ -419,7 +417,7 @@ public class GuitarTheoryApp {
     private void saveProgression() {
         try {
             jsonWriter.open();
-            jsonWriter.write(workRoom);
+            jsonWriter.write(progression);
             jsonWriter.close();
             System.out.println("Saved " + progression.getName() + " to " + JSON_STORE);
         } catch (FileNotFoundException e) {

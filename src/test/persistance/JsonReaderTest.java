@@ -24,7 +24,7 @@ public class JsonReaderTest extends JsonTest {
 
     @Test
     void testReaderEmptyChordProgression() {
-        JsonReader reader = new JsonReader("./data/testReaderEmptyChordProgression.json");
+        JsonReader reader = new JsonReader("./data/testReaderEmptyProgression");
         try {
             ChordProgression cp = reader.read();
             assertEquals("My chord progression", cp.getName());
@@ -36,7 +36,7 @@ public class JsonReaderTest extends JsonTest {
 
     @Test
     void testReaderGeneralChordProgression() {
-        JsonReader reader = new JsonReader("./data/testReaderGeneralChordProgression.json");
+        JsonReader reader = new JsonReader("./data/testReaderGeneralProgression");
         try {
             ChordProgression cp = reader.read();
             assertEquals("My chord progression", cp.getName());

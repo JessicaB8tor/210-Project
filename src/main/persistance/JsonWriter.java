@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+//This class is based off the JsonWriter class in the JSON serialization demo repo,
+// writes JSON objects/involves the writing of data
 public class JsonWriter {
     private static final int TAB = 4;
     private PrintWriter writer;

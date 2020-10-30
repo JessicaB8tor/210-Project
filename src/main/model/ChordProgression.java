@@ -92,7 +92,11 @@ public class ChordProgression implements Writable {
         return progression.size();
     }
 
+
+    //Following 2 methods based off methods in "Workroom" of JSON Serialization repo
     @Override
+    //MODIFIES: this
+    //EFFECTS: Transforms Chord Progression to JSON object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("name", name);
@@ -100,7 +104,7 @@ public class ChordProgression implements Writable {
         return json;
     }
 
-    // EFFECTS: returns things in this workroom as a JSON array
+    // EFFECTS: returns things in chord progression as a jSON array
     private JSONArray progressionToJson() {
         JSONArray jsonArray = new JSONArray();
 

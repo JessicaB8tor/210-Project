@@ -55,6 +55,9 @@ public abstract class Chord implements Writable {
     }
 
     @Override
+    //This method based off the toJson Method in the JSON Serialization repo
+    //MODIFIES: this
+    //EFFECTS: Transforms chord into a JSON Object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("name", name);

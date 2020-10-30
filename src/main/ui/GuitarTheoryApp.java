@@ -112,9 +112,11 @@ public class GuitarTheoryApp {
         System.out.println("\tmajc -> Major Chords");
         System.out.println("\tminc -> Minor Chords");
         if (input.next().equals("majc")) {
-            processMajorChordCommands("majc");
+            System.out.println("Please select a chord");
+            processChordCommand("majc");
         } else if (input.next().equals("minc")) {
-            processMinorChordCommands("minc");
+            System.out.println("Please select a chord");
+            processChordCommand("minc");
         }
     }
 
@@ -413,7 +415,10 @@ public class GuitarTheoryApp {
         System.out.println(progression.getAllNames());
     }
 
-    // EFFECTS: saves the workroom to file
+    //The following 2 methods are based off similar methods in the JSON serialization demo repo
+    //in the WorkRoomApp class
+
+    // EFFECTS: saves the chord progression to file
     private void saveProgression() {
         try {
             jsonWriter.open();
@@ -426,7 +431,7 @@ public class GuitarTheoryApp {
     }
 
     // MODIFIES: this
-    // EFFECTS: loads workroom from file
+    // EFFECTS: loads chord progression from file
     private void loadProgression() {
         try {
             progression = jsonReader.read();

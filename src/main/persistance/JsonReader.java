@@ -12,6 +12,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
+
+//This class is based off the JsonReader class in the JSON serialization demo repo, reads JSON objects/data
 public class JsonReader {
     private String source;
 
@@ -20,7 +22,7 @@ public class JsonReader {
         this.source = source;
     }
 
-        // EFFECTS: reads workroom from file and returns it;
+        // EFFECTS: reads chord progression from file and returns it;
         // throws IOException if an error occurs reading data from file
     public ChordProgression read() throws IOException {
         String jsonData = readFile(source);
@@ -29,7 +31,6 @@ public class JsonReader {
     }
 
         // EFFECTS: reads source file as string and returns it
-
     private String readFile(String source) throws IOException {
         StringBuilder contentBuilder = new StringBuilder();
         try (Stream<String> stream = Files.lines(Paths.get(source), StandardCharsets.UTF_8)) {
@@ -38,7 +39,7 @@ public class JsonReader {
         return contentBuilder.toString();
     }
 
-        // EFFECTS: parses workroom from JSON object and returns it
+        // EFFECTS: parses chord progression from JSON object and returns it
     private ChordProgression parseChordProgression(JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         ChordProgression cp = new ChordProgression(name);
@@ -46,9 +47,8 @@ public class JsonReader {
         return cp;
     }
 
-        // MODIFIES: wr
-        // EFFECTS: parses thingies from JSON object and adds them to workroom
-
+        // MODIFIES: cp
+        // EFFECTS: parses chords from JSON object and adds them to chord progression
     private void addChords(ChordProgression cp, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("progression");
         for (Object json : jsonArray) {
@@ -57,8 +57,8 @@ public class JsonReader {
         }
     }
 
-        // MODIFIES: wr
-        // EFFECTS: parses thingy from JSON object and adds it to workroom
+        // MODIFIES: cp
+        // EFFECTS: parses chord from JSON object and adds it to chord progression
     private void addChord(ChordProgression cp, JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         String first = jsonObject.getString("first");

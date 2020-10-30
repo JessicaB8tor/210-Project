@@ -10,8 +10,12 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+//testclass for JSON reader class
 public class JsonReaderTest extends JsonTest {
+
+
     @Test
+    //Test reading a file that does not exist, expect IOException
     void testReaderNonExistentFile() {
         JsonReader reader = new JsonReader("./data/noSuchFile.json");
         try {
@@ -23,6 +27,7 @@ public class JsonReaderTest extends JsonTest {
     }
 
     @Test
+    //Test reading a file with an empty chord progression
     void testReaderEmptyChordProgression() {
         JsonReader reader = new JsonReader("./data/testReaderEmptyProgression");
         try {
@@ -35,6 +40,7 @@ public class JsonReaderTest extends JsonTest {
     }
 
     @Test
+    //Test reading a file including a chord progression with mulitple chords in it
     void testReaderGeneralChordProgression() {
         JsonReader reader = new JsonReader("./data/testReaderGeneralProgression");
         try {

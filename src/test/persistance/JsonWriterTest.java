@@ -12,9 +12,11 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+//Test class for the JsonWriter class
 public class JsonWriterTest extends JsonTest {
 
     @Test
+    //test writing of invalid file, expect IOException
     void testWriterInvalidFile() {
         try {
             ChordProgression cp = new ChordProgression("My chord progression");
@@ -27,6 +29,7 @@ public class JsonWriterTest extends JsonTest {
     }
 
     @Test
+    //test writing an empty chord progression
     void testWriterEmptyProgression() {
         try {
             ChordProgression cp = new ChordProgression("My chord progression");
@@ -45,6 +48,7 @@ public class JsonWriterTest extends JsonTest {
     }
 
     @Test
+    //test writing then reading a well formed chord progression with two chords in it
     void testWriterGeneralProgression() {
         try {
             ChordProgression cp = new ChordProgression("My chord progression");

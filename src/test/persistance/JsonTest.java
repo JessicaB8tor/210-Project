@@ -4,6 +4,7 @@ import model.Chord;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+//Test class for the Json checkChord method
 public class JsonTest {
     protected void checkChord(String name, String first, String third, String fifth, Chord chord) {
         assertEquals(name, chord.getName());

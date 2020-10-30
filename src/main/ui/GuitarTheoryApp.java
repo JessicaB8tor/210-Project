@@ -108,15 +108,28 @@ public class GuitarTheoryApp {
 
     //EFFECTS: displays chord options to user
     private void displayChordMenu() {
-        System.out.println("Please select a command");
+        System.out.println("What type of chord would you like to see?");
         System.out.println("\tmajc -> Major Chords");
         System.out.println("\tminc -> Minor Chords");
         if (input.next().equals("majc")) {
-            System.out.println("Please select a chord");
+            System.out.println("Awesome! Major it is! Select your chord:");
             processChordCommand("majc");
         } else if (input.next().equals("minc")) {
-            System.out.println("Please select a chord");
+            System.out.println("Coolio! Minor it is! Select your chord:");
             processChordCommand("minc");
+        }
+    }
+
+    //EFFECTS: displays scale options to user
+    private void displayScaleMenu() {
+        System.out.println("What type of scale would you like to see?");
+        System.out.println("\tmajs -> Major Scales");
+        System.out.println("\tmps -> Minor Pentatonic Scales");
+        if (input.next().equals("majs")) {
+            System.out.println("Major Scale? Good choice! Select a scale:");
+            processScaleCommand("majs");
+        } else if (input.next().equals("mps")) {
+            processScaleCommand("mps");
         }
     }
 
@@ -128,8 +141,7 @@ public class GuitarTheoryApp {
         if (command.equals("c")) {
             displayChordMenu();
         } else if (command.equals("s")) {
-            System.out.println("\tmajs -> Major Scales");
-            System.out.println("\tmps -> Minor Pentatonic Scales");
+            displayScaleMenu();
         } else if (command.equals("save")) {
             saveProgression();
         } else if (command.equals("load")) {

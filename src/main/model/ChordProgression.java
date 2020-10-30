@@ -1,17 +1,29 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistance.Writable;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 //This class deals with a Chord Progression which is a list of chords that a user can add to and remove
 //to as they please
-public class ChordProgression {
+public class ChordProgression implements Writable {
     private List<Chord> progression;
+    private String name;
 
     //EFFECTS: Constructs an empty chord progression idea/list
-    public ChordProgression() {
+    public ChordProgression(String name) {
         progression = new ArrayList<Chord>();
+        this.name = name;
 
+    }
+
+    //EFFECTS: gets name of progression
+    public String getName() {
+        return name;
     }
 
     //MODIFIES: this
@@ -70,7 +82,39 @@ public class ChordProgression {
         return myprog;
     }
 
+    // EFFECTS: returns an unmodifiable list of thingies in this workroom
+    public List<Chord> getChords() {
+        return Collections.unmodifiableList(progression);
+    }
 
+    // EFFECTS: returns number of thingies in this workroom
+    public int numThingies() {
+        return progression.size();
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("progression", progressionToJson());
+        return json;
+    }
+
+    // EFFECTS: returns things in this workroom as a JSON array
+    private JSONArray progressionToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Chord c : progression) {
+            jsonArray.put(c.toJson());
+        }
+
+        return jsonArray;
+    }
 }
+
+
+
+
+
 
 

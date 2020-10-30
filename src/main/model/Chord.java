@@ -1,10 +1,13 @@
 package model;
 
+import org.json.JSONObject;
+import persistance.Writable;
+
 import java.util.ArrayList;
 import java.util.List;
 
 //chords here are made up of a first third and fifth
-public abstract class Chord {
+public abstract class Chord implements Writable {
     private String first;
     private String third;
     private String fifth;
@@ -51,6 +54,13 @@ public abstract class Chord {
 
     }
 
-
-
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("first", first);
+        json.put("third", third);
+        json.put("fifth", fifth);
+        return json;
+    }
 }

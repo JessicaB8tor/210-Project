@@ -1,7 +1,11 @@
 package ui;
 
 import model.*;
+import persistance.JsonReader;
+import persistance.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,6 +18,10 @@ public class GuitarTheoryApp {
     public  FavouriteChords favourites;
     private ChordProgression progression;
     private Scanner input;
+    private static final String JSON_STORE = "./data/progression.json";
+    private ChordProgression workRoom;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
     public static final MajorChord C_MAJOR = new MajorChord("CMajor", "C", "E", "G");
     public static final MajorChord D_MAJOR = new MajorChord("DMajor", "D", "F#", "A");
     public static final MajorChord E_MAJOR = new MajorChord("EMajor", "E", "G#", "B");
@@ -34,7 +42,10 @@ public class GuitarTheoryApp {
     private Boolean displayMainMenu;
 
     //EFFECTS: run the guitar theory application
-    public GuitarTheoryApp() {
+    public GuitarTheoryApp() throws FileNotFoundException {
+        progression = new ChordProgression("My chord progression");
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runGuitarTheoryApp();
     }
 
@@ -64,7 +75,7 @@ public class GuitarTheoryApp {
     private void init() {
         input = new Scanner(System.in);
         favourites = new FavouriteChords();
-        progression = new ChordProgression();
+        progression = new ChordProgression("My chord progression");
         MAJOR_CHORDS = new ArrayList<MajorChord>();
         MAJOR_CHORDS.add(C_MAJOR);
         MAJOR_CHORDS.add(D_MAJOR);
@@ -92,14 +103,23 @@ public class GuitarTheoryApp {
         System.out.println("\ts -> Scales");
         System.out.println("\tfaves -> Favourites");
         System.out.println("\tprogression -> My Chord Progression");
+        System.out.println("\ts -> save work room to file");
+        System.out.println("\tl -> load work room from file");
         System.out.println("\tq -> Quit");
     }
 
     //EFFECTS: displays chord options to user
     private void displayChordMenu() {
+        System.out.println("Please select a command");
         System.out.println("\tmajc -> Major Chords");
         System.out.println("\tminc -> Minor Chords");
+        if (input.next().equals("majc")) {
+            processMajorChordCommands("majc");
+        } else if (input.next().equals("minc")) {
+            processMinorChordCommands("minc");
+        }
     }
+
 
 
     //MODIFIES: this
@@ -110,9 +130,10 @@ public class GuitarTheoryApp {
         } else if (command.equals("s")) {
             System.out.println("\tmajs -> Major Scales");
             System.out.println("\tmps -> Minor Pentatonic Scales");
-        } else if (command.equals("majc")) {
-            processChordCommand("majc");
-        } else if (command.equals("minc")) {
+        } else if (command.equals("s")) {
+            saveProgression();
+        } else if (command.equals("l")) {
+            loadProgression();
             processChordCommand("minc");
         } else if (command.equals("majs")) {
             processScaleCommand("majs");
@@ -393,7 +414,31 @@ public class GuitarTheoryApp {
     private void displayMyProgression() {
         System.out.println(progression.getAllNames());
     }
+
+    // EFFECTS: saves the workroom to file
+    private void saveProgression() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(workRoom);
+            jsonWriter.close();
+            System.out.println("Saved " + progression.getName() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads workroom from file
+    private void loadProgression() {
+        try {
+            progression = jsonReader.read();
+            System.out.println("Loaded " + progression.getName() + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
+    }
 }
+
 
 
 

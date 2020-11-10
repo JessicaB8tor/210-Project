@@ -2,7 +2,9 @@ package model;
 
 import org.json.JSONObject;
 import persistance.Writable;
+import ui.GuitarTheoryAppGUI;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +14,7 @@ public abstract class Chord implements Writable {
     private String third;
     private String fifth;
     private String name;                        //name of the chord
+
 
 
     //EFFECTS: creates a chord with the three given notes

@@ -1,6 +1,5 @@
 package ui;
 
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,36 +8,41 @@ public class ChordFrame extends JFrame {
     private JFrame chordFrame;
     private JPanel chordPanel;
 
+
     public ChordFrame() {
-
-    }
-
-    public void createFrame() {
         chordFrame = new JFrame();
+        setSize(new Dimension(500, 500));
+        pack();
+        setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setChordPanel();
         buttonSetup();
-        chordFrame.pack();
-        chordFrame.setVisible(true);
+        getContentPane().add(chordPanel);
+        setVisible(true);
     }
 
     public void setChordPanel() {
         chordPanel = new JPanel();
-        chordPanel.setLayout(new BoxLayout(chordPanel, BoxLayout.Y_AXIS));
+        chordPanel.setPreferredSize(new Dimension(500, 500));
+        chordPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 250, 250));
         chordPanel.setBackground(Color.BLACK);
         chordFrame.getContentPane().add(chordPanel);
     }
 
     public void buttonSetup() {
         JButton majorChordsButton = new JButton("Major Chords");
-        majorChordsButton.setBounds(100, 100, 100, 100);
+        majorChordsButton.setPreferredSize(new Dimension(300, 300));
         chordPanel.add(majorChordsButton);
 
         JButton minorChordsButton = new JButton("Minor Chords");
-        minorChordsButton.setBounds(200, 200, 50, 50);
+        minorChordsButton.setPreferredSize(new Dimension(300, 300));
         chordPanel.add(minorChordsButton);
 
 
     }
 
 }
+
+
+
+

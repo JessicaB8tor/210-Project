@@ -431,20 +431,20 @@ public class GuitarTheoryApp {
     //in the WorkRoomApp class
 
     // EFFECTS: saves the chord progression to file
-    private void saveProgression() {
+    public void saveProgression() {
         try {
             jsonWriter.open();
             jsonWriter.write(progression);
             jsonWriter.close();
-            System.out.println("Saved " + progression.getName() + " to " + JSON_STORE);
+            //System.out.println("Saved " + progression.getName() + " to " + JSON_STORE);
         } catch (FileNotFoundException e) {
-            System.out.println("Unable to write to file: " + JSON_STORE);
+            //System.out.println("Unable to write to file: " + JSON_STORE);
         }
     }
 
     // MODIFIES: this
     // EFFECTS: loads chord progression from file
-    private void loadProgression() {
+    public void loadProgression() {
         try {
             progression = jsonReader.read();
             System.out.println("Loaded " + progression.getName() + " from " + JSON_STORE);

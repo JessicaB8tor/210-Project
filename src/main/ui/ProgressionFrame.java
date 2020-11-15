@@ -1,6 +1,8 @@
 package ui;
 
+import model.Chord;
 import model.ChordProgression;
+import model.MajorChord;
 import persistance.JsonReader;
 import persistance.JsonWriter;
 
@@ -13,12 +15,15 @@ import java.io.IOException;
 import java.util.function.ToDoubleBiFunction;
 
 public class ProgressionFrame extends JFrame implements ActionListener {
-    private JFrame progressionFrame;
-    private JPanel progressionPanel;
+    public JFrame progressionFrame;
+    public JPanel progressionPanel;
+    private MyProgressionFrame myProgressionFrame;
     private JsonWriter jsonWriter = new JsonWriter("My Progression");
     private ChordProgression progression;
     private JsonReader jsonReader = new JsonReader("My Progression");
     private static final String JSON_STORE = "./data/Progression.json";
+    private Chord chord;
+    private String  name;
 
 
     public ProgressionFrame() {
@@ -42,20 +47,20 @@ public class ProgressionFrame extends JFrame implements ActionListener {
     }
 
     public void buttonSetup() {
+        JButton view = new JButton("View My Chord Progression");
+        view.setPreferredSize(new Dimension(200, 200));
+        view.addActionListener(this);
+        progressionPanel.add(view);
+
         JButton save = new JButton("Save Current Progression");
-        save.setPreferredSize(new Dimension(300, 300));
+        save.setPreferredSize(new Dimension(200, 200));
         save.addActionListener(this);
         progressionPanel.add(save);
 
         JButton load = new JButton("Load Chord Progression");
-        load.setPreferredSize(new Dimension(300, 300));
+        load.setPreferredSize(new Dimension(200, 200));
         load.addActionListener(this);
         progressionPanel.add(load);
-
-        JButton view = new JButton("View My Chord Progression");
-        view.setPreferredSize(new Dimension(300, 300));
-        view.addActionListener(this);
-        progressionPanel.add(view);
 
     }
 

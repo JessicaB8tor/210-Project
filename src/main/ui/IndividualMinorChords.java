@@ -1,16 +1,21 @@
 package ui;
 
+import model.Chord;
+import model.MinorChord;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class IndividualMinorChords extends JFrame {
+public class IndividualMinorChords extends JFrame implements ActionListener {
     private JFrame frame;
     private JPanel panel;
-    private String chordName;
+    private Chord chord;
 
-    public IndividualMinorChords(String chordName) {
-        this.chordName = chordName;
-        frame = new JFrame(chordName);
+    public IndividualMinorChords(MinorChord chord) {
+        this.chord = chord;
+        frame = new JFrame(chord.getName());
         setSize(new Dimension(500, 500));
         pack();
         setLayout(new BorderLayout());
@@ -24,27 +29,31 @@ public class IndividualMinorChords extends JFrame {
     public void setPanel() {
         panel = new JPanel();
         panel.setPreferredSize(new Dimension(500, 500));
-        panel.setLayout(new GridLayout(3, 1));
+        panel.setLayout(new GridLayout(4, 1));
         panel.setBackground(Color.WHITE);
         frame.getContentPane().add(panel);
     }
 
     public void showNotes() {
-        if (chordName.equals("CMinor")) {
+        if (chord.getName().equals("CMinor")) {
             cminor();
-        } else if (chordName.equals("DMinor")) {
+        } else if (chord.getName().equals("DMinor")) {
             dminor();
-        } else if (chordName.equals("EMinor")) {
+        } else if (chord.getName().equals("EMinor")) {
             eminor();
-        } else if (chordName.equals("FMinor")) {
+        } else if (chord.getName().equals("FMinor")) {
             fminor();
-        } else if (chordName.equals("GMinor")) {
+        } else if (chord.getName().equals("GMinor")) {
             gminor();
-        } else if (chordName.equals("AMinor")) {
+        } else if (chord.getName().equals("AMinor")) {
             aminor();
-        } else if (chordName.equals("BMinor")) {
+        } else if (chord.getName().equals("BMinor")) {
             bminor();
         }
+        JButton addto = new JButton("Add to Chord Progression");
+        addto.setPreferredSize(new Dimension(100, 100));
+        addto.addActionListener(this);
+        panel.add(addto);
     }
 
     private void cminor() {
@@ -54,9 +63,9 @@ public class IndividualMinorChords extends JFrame {
         cnote.setHorizontalAlignment(JLabel.CENTER);
         eflatnote.setHorizontalAlignment(JLabel.CENTER);
         gnote.setHorizontalAlignment(JLabel.CENTER);
-        cnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
-        eflatnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
-        gnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
+        cnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        eflatnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        gnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
         panel.add(cnote);
         panel.add(eflatnote);
         panel.add(gnote);
@@ -69,9 +78,9 @@ public class IndividualMinorChords extends JFrame {
         dnote.setHorizontalAlignment(JLabel.CENTER);
         fnote.setHorizontalAlignment(JLabel.CENTER);
         anote.setHorizontalAlignment(JLabel.CENTER);
-        dnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
-        fnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
-        anote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
+        dnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        fnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        anote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
         panel.add(dnote);
         panel.add(fnote);
         panel.add(anote);
@@ -84,9 +93,9 @@ public class IndividualMinorChords extends JFrame {
         enote.setHorizontalAlignment(JLabel.CENTER);
         gnote.setHorizontalAlignment(JLabel.CENTER);
         bnote.setHorizontalAlignment(JLabel.CENTER);
-        enote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
-        gnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
-        bnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
+        enote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        gnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        bnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
         panel.add(gnote);
         panel.add(gnote);
         panel.add(bnote);
@@ -99,9 +108,9 @@ public class IndividualMinorChords extends JFrame {
         fnote.setHorizontalAlignment(JLabel.CENTER);
         aflatnote.setHorizontalAlignment(JLabel.CENTER);
         cnote.setHorizontalAlignment(JLabel.CENTER);
-        fnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
-        aflatnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
-        cnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
+        fnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        aflatnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        cnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
         panel.add(fnote);
         panel.add(aflatnote);
         panel.add(cnote);
@@ -114,9 +123,9 @@ public class IndividualMinorChords extends JFrame {
         gnote.setHorizontalAlignment(JLabel.CENTER);
         bflatnote.setHorizontalAlignment(JLabel.CENTER);
         dnote.setHorizontalAlignment(JLabel.CENTER);
-        gnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
-        bflatnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
-        dnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
+        gnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        bflatnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        dnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
         panel.add(dnote);
         panel.add(bflatnote);
         panel.add(dnote);
@@ -129,9 +138,9 @@ public class IndividualMinorChords extends JFrame {
         anote.setHorizontalAlignment(JLabel.CENTER);
         cnote.setHorizontalAlignment(JLabel.CENTER);
         enote.setHorizontalAlignment(JLabel.CENTER);
-        anote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
-        cnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
-        enote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
+        anote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        cnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        enote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
         panel.add(anote);
         panel.add(cnote);
         panel.add(enote);
@@ -144,12 +153,17 @@ public class IndividualMinorChords extends JFrame {
         bnote.setHorizontalAlignment(JLabel.CENTER);
         dnote.setHorizontalAlignment(JLabel.CENTER);
         fsharpnote.setHorizontalAlignment(JLabel.CENTER);
-        bnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
-        dnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
-        fsharpnote.setFont(new Font("Comic Sans", Font.PLAIN, 250));
+        bnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        dnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        fsharpnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
         panel.add(bnote);
         panel.add(dnote);
         panel.add(fsharpnote);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }
 

@@ -36,8 +36,6 @@ public class ScaleFrame extends JFrame {
         JButton mpButton = new JButton("Minor Pentatonic Scale");
         mpButton.setPreferredSize(new Dimension(300, 300));
         scalePanel.add(mpButton);
-
-
     }
 
 }

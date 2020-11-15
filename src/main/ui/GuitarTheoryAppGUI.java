@@ -1,8 +1,5 @@
 package ui;
 
-
-import model.Chord;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -71,7 +68,6 @@ public class GuitarTheoryAppGUI extends JFrame implements ActionListener {
         }
 
     }
-
 
     public static void main(String[] args) {
         new GuitarTheoryAppGUI();

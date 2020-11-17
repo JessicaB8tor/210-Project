@@ -62,11 +62,15 @@ public class ViewProgressionFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Home")) {
-            GuitarTheoryAppGUI guitarTheoryAppGUI = new GuitarTheoryAppGUI();
+            SaveFrame saveFrame = new SaveFrame(progression);
             dispose();
         } else if (e.getActionCommand().equals("Add another chord")) {
             ChordFrame chordFrame = new ChordFrame(progression);
             dispose();
         }
+    }
+
+    public ChordProgression getProgression() {
+        return progression;
     }
 }

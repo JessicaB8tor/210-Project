@@ -131,7 +131,7 @@ public class IndividualMinorChords extends JFrame implements ActionListener {
         gnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         bflatnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         dnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        panel.add(dnote);
+        panel.add(gnote);
         panel.add(bflatnote);
         panel.add(dnote);
     }

@@ -101,7 +101,7 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         enote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         gsharpnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         bnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        panel.add(gsharpnote);
+        panel.add(enote);
         panel.add(gsharpnote);
         panel.add(bnote);
     }

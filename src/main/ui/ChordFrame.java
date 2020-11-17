@@ -1,6 +1,9 @@
 package ui;
 
 
+import model.Chord;
+import model.ChordProgression;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,9 +13,11 @@ import java.awt.event.ActionListener;
 public class ChordFrame extends JFrame implements ActionListener {
     private JFrame chordFrame;
     private JPanel chordPanel;
+    private ChordProgression cp;
 
 
-    public ChordFrame() {
+    public ChordFrame(ChordProgression cp1) {
+        this.cp = cp1;
         chordFrame = new JFrame();
         setSize(new Dimension(500, 500));
         pack();
@@ -49,10 +54,10 @@ public class ChordFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Major Chords")) {
-            MajorChordsFrame majorChordsFrame = new MajorChordsFrame();
+            MajorChordsFrame majorChordsFrame = new MajorChordsFrame(cp);
             dispose();
         } else if (e.getActionCommand().equals("Minor Chords")) {
-            MinorChordsFrame minorChordsFrame = new MinorChordsFrame();
+            MinorChordsFrame minorChordsFrame = new MinorChordsFrame(cp);
             dispose();
         }
 

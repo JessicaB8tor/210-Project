@@ -1,6 +1,7 @@
 package ui;
 
 import model.Chord;
+import model.ChordProgression;
 import model.MajorChord;
 
 import javax.swing.*;
@@ -9,12 +10,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class IndividualMajorChords extends JFrame implements ActionListener {
-    private JFrame frame;
-    private JPanel panel;
+    public JFrame frame;
+    public JPanel panel;
     public Chord chord;
-    public MyProgressionFrame myProgressionFrame;
+    public ChordProgression myProgression;
 
-    public IndividualMajorChords(MajorChord chord) {
+    public IndividualMajorChords(MajorChord chord, ChordProgression chordProgression) {
+        myProgression = chordProgression;
         this.chord = chord;
         frame = new JFrame(chord.getName());
         setSize(new Dimension(500, 500));
@@ -26,7 +28,6 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         getContentPane().add(panel);
         setVisible(true);
     }
-
 
     public void setPanel() {
         panel = new JPanel();
@@ -59,7 +60,6 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
     }
 
 
-
     public void cmajor() {
         Chord cmajor = new MajorChord("CMajor", "C", "E", "G");
         JLabel cnote = new JLabel("C");
@@ -68,9 +68,9 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         cnote.setHorizontalAlignment(JLabel.CENTER);
         enote.setHorizontalAlignment(JLabel.CENTER);
         gnote.setHorizontalAlignment(JLabel.CENTER);
-        cnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        enote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        gnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        cnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        enote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        gnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         panel.add(cnote);
         panel.add(enote);
         panel.add(gnote);
@@ -83,9 +83,9 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         dnote.setHorizontalAlignment(JLabel.CENTER);
         fsharpnote.setHorizontalAlignment(JLabel.CENTER);
         anote.setHorizontalAlignment(JLabel.CENTER);
-        dnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        fsharpnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        anote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        dnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        fsharpnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        anote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         panel.add(dnote);
         panel.add(fsharpnote);
         panel.add(anote);
@@ -98,9 +98,9 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         enote.setHorizontalAlignment(JLabel.CENTER);
         gsharpnote.setHorizontalAlignment(JLabel.CENTER);
         bnote.setHorizontalAlignment(JLabel.CENTER);
-        enote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        gsharpnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        bnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        enote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        gsharpnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        bnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         panel.add(gsharpnote);
         panel.add(gsharpnote);
         panel.add(bnote);
@@ -113,9 +113,9 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         fnote.setHorizontalAlignment(JLabel.CENTER);
         anote.setHorizontalAlignment(JLabel.CENTER);
         cnote.setHorizontalAlignment(JLabel.CENTER);
-        fnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        anote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        cnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        fnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        anote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        cnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         panel.add(fnote);
         panel.add(anote);
         panel.add(cnote);
@@ -128,10 +128,10 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         gnote.setHorizontalAlignment(JLabel.CENTER);
         bnote.setHorizontalAlignment(JLabel.CENTER);
         dnote.setHorizontalAlignment(JLabel.CENTER);
-        gnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        bnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        dnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        panel.add(dnote);
+        gnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        bnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        dnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        panel.add(gnote);
         panel.add(bnote);
         panel.add(dnote);
     }
@@ -143,9 +143,9 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         anote.setHorizontalAlignment(JLabel.CENTER);
         csharpnote.setHorizontalAlignment(JLabel.CENTER);
         enote.setHorizontalAlignment(JLabel.CENTER);
-        anote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        csharpnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        enote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        anote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        csharpnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        enote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         panel.add(anote);
         panel.add(csharpnote);
         panel.add(enote);
@@ -158,9 +158,9 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         bnote.setHorizontalAlignment(JLabel.CENTER);
         dsharpnote.setHorizontalAlignment(JLabel.CENTER);
         fsharpnote.setHorizontalAlignment(JLabel.CENTER);
-        bnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        dsharpnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        fsharpnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        bnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        dsharpnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        fsharpnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         panel.add(bnote);
         panel.add(dsharpnote);
         panel.add(fsharpnote);
@@ -168,13 +168,21 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        myProgressionFrame = new MyProgressionFrame(chord);
-        JLabel chordName = new JLabel(chord.getName());
-        chordName.setHorizontalAlignment(JLabel.CENTER);
-        chordName.setFont(new Font("Comic Sans", Font.PLAIN, 50));
-        myProgressionFrame.add(chordName);
-        dispose();
+        if (e.getActionCommand().equals("Add to Chord Progression")) {
+            myProgression.addToProgression(chord);
+            SuccessFrame successFrame = new SuccessFrame(chord, myProgression);
+            dispose();
+        }
     }
+
+    public ChordProgression getChordsList() {
+        return myProgression;
+    }
+
+    public Chord getChord() {
+        return chord;
+    }
+
 }
 
 

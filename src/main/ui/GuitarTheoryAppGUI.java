@@ -1,5 +1,7 @@
 package ui;
 
+import model.ChordProgression;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,11 +11,13 @@ import java.awt.event.ActionListener;
 public class GuitarTheoryAppGUI extends JFrame implements ActionListener {
     private JFrame frame;
     private MainPanel main;
+    private ChordProgression cp1;
 
 
 
     public GuitarTheoryAppGUI() {
         super("Guitar Theory App");
+        cp1 = new ChordProgression("My Progression");
         frame = new JFrame();
         frame.setSize(500, 500);
         pack();
@@ -57,7 +61,7 @@ public class GuitarTheoryAppGUI extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Chords")) {
-            ChordFrame chordFrame = new ChordFrame();
+            ChordFrame chordFrame = new ChordFrame(cp1);
             dispose();
         } else if (e.getActionCommand().equals("Scales")) {
             ScaleFrame scaleFrame = new ScaleFrame();

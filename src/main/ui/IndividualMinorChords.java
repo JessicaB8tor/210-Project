@@ -1,6 +1,7 @@
 package ui;
 
 import model.Chord;
+import model.ChordProgression;
 import model.MinorChord;
 
 import javax.swing.*;
@@ -12,8 +13,12 @@ public class IndividualMinorChords extends JFrame implements ActionListener {
     private JFrame frame;
     private JPanel panel;
     private Chord chord;
+    private ChordProgression myProgression;
+    private ViewProgressionFrame viewProgressionFrame;
 
-    public IndividualMinorChords(MinorChord chord) {
+    public IndividualMinorChords(MinorChord chord, ChordProgression chordProgression) {
+        myProgression = chordProgression;
+        viewProgressionFrame = new ViewProgressionFrame(myProgression);
         this.chord = chord;
         frame = new JFrame(chord.getName());
         setSize(new Dimension(500, 500));
@@ -63,9 +68,9 @@ public class IndividualMinorChords extends JFrame implements ActionListener {
         cnote.setHorizontalAlignment(JLabel.CENTER);
         eflatnote.setHorizontalAlignment(JLabel.CENTER);
         gnote.setHorizontalAlignment(JLabel.CENTER);
-        cnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        eflatnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        gnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        cnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        eflatnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        gnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         panel.add(cnote);
         panel.add(eflatnote);
         panel.add(gnote);
@@ -78,9 +83,9 @@ public class IndividualMinorChords extends JFrame implements ActionListener {
         dnote.setHorizontalAlignment(JLabel.CENTER);
         fnote.setHorizontalAlignment(JLabel.CENTER);
         anote.setHorizontalAlignment(JLabel.CENTER);
-        dnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        fnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        anote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        dnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        fnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        anote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         panel.add(dnote);
         panel.add(fnote);
         panel.add(anote);
@@ -93,9 +98,9 @@ public class IndividualMinorChords extends JFrame implements ActionListener {
         enote.setHorizontalAlignment(JLabel.CENTER);
         gnote.setHorizontalAlignment(JLabel.CENTER);
         bnote.setHorizontalAlignment(JLabel.CENTER);
-        enote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        gnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        bnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        enote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        gnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        bnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         panel.add(gnote);
         panel.add(gnote);
         panel.add(bnote);
@@ -108,9 +113,9 @@ public class IndividualMinorChords extends JFrame implements ActionListener {
         fnote.setHorizontalAlignment(JLabel.CENTER);
         aflatnote.setHorizontalAlignment(JLabel.CENTER);
         cnote.setHorizontalAlignment(JLabel.CENTER);
-        fnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        aflatnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        cnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        fnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        aflatnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        cnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         panel.add(fnote);
         panel.add(aflatnote);
         panel.add(cnote);
@@ -123,9 +128,9 @@ public class IndividualMinorChords extends JFrame implements ActionListener {
         gnote.setHorizontalAlignment(JLabel.CENTER);
         bflatnote.setHorizontalAlignment(JLabel.CENTER);
         dnote.setHorizontalAlignment(JLabel.CENTER);
-        gnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        bflatnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        dnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        gnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        bflatnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        dnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         panel.add(dnote);
         panel.add(bflatnote);
         panel.add(dnote);
@@ -138,9 +143,9 @@ public class IndividualMinorChords extends JFrame implements ActionListener {
         anote.setHorizontalAlignment(JLabel.CENTER);
         cnote.setHorizontalAlignment(JLabel.CENTER);
         enote.setHorizontalAlignment(JLabel.CENTER);
-        anote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        cnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        enote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        anote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        cnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        enote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         panel.add(anote);
         panel.add(cnote);
         panel.add(enote);
@@ -153,9 +158,9 @@ public class IndividualMinorChords extends JFrame implements ActionListener {
         bnote.setHorizontalAlignment(JLabel.CENTER);
         dnote.setHorizontalAlignment(JLabel.CENTER);
         fsharpnote.setHorizontalAlignment(JLabel.CENTER);
-        bnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        dnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
-        fsharpnote.setFont(new Font("Comic Sans", Font.PLAIN, 200));
+        bnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        dnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+        fsharpnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
         panel.add(bnote);
         panel.add(dnote);
         panel.add(fsharpnote);
@@ -163,8 +168,23 @@ public class IndividualMinorChords extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getActionCommand().equals("Add to Chord Progression")) {
+            myProgression.addToProgression(chord);
+            SuccessFrame successFrame = new SuccessFrame(chord, myProgression);
+            dispose();
+        }
     }
+
+    public ChordProgression getChordsList() {
+        return myProgression;
+    }
+
+
+    /*
+    public void setChordProgression(ChordProgression myProgression) {
+        viewProgressionFrame.setProgression(myProgression);
+    }
+    */
 }
 
 

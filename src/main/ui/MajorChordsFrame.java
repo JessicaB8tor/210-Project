@@ -1,5 +1,6 @@
 package ui;
 
+import model.ChordProgression;
 import model.MajorChord;
 
 import javax.swing.*;
@@ -20,9 +21,11 @@ public class MajorChordsFrame extends JFrame implements ActionListener {
     public static final MajorChord G_MAJOR = new MajorChord("GMajor", "G", "B", "D");
     public static final MajorChord A_MAJOR = new MajorChord("AMajor", "A", "C#", "E");
     public static final MajorChord B_MAJOR = new MajorChord("BMajor", "B", "D#", "F#");
+    private ChordProgression cp;
 
 
-    public MajorChordsFrame() {
+    public MajorChordsFrame(ChordProgression chordProgression) {
+        this.cp = chordProgression;
         majorChordsFrame = new JFrame();
         setSize(new Dimension(500, 500));
         pack();
@@ -72,19 +75,19 @@ public class MajorChordsFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("CMajor")) {
-            IndividualMajorChords indivdualChordFrames = new IndividualMajorChords(C_MAJOR);
+            IndividualMajorChords indivdualChordFrames = new IndividualMajorChords(C_MAJOR, cp);
         } else if (e.getActionCommand().equals("DMajor")) {
-            IndividualMajorChords indivdualChordFrames = new IndividualMajorChords(D_MAJOR);
+            IndividualMajorChords indivdualChordFrames = new IndividualMajorChords(D_MAJOR, cp);
         } else if (e.getActionCommand().equals("EMajor")) {
-            IndividualMajorChords indivdualChordFrames = new IndividualMajorChords(E_MAJOR);
+            IndividualMajorChords indivdualChordFrames = new IndividualMajorChords(E_MAJOR, cp);
         } else if (e.getActionCommand().equals("FMajor")) {
-            IndividualMajorChords indivdualChordFrames = new IndividualMajorChords(F_MAJOR);
+            IndividualMajorChords indivdualChordFrames = new IndividualMajorChords(F_MAJOR, cp);
         } else if (e.getActionCommand().equals("GMajor")) {
-            IndividualMajorChords indivdualChordFrames = new IndividualMajorChords(G_MAJOR);
+            IndividualMajorChords indivdualChordFrames = new IndividualMajorChords(G_MAJOR, cp);
         } else if (e.getActionCommand().equals("AMajor")) {
-            IndividualMajorChords indivdualChordFrames = new IndividualMajorChords(A_MAJOR);
+            IndividualMajorChords indivdualChordFrames = new IndividualMajorChords(A_MAJOR, cp);
         } else if (e.getActionCommand().equals("BMajor")) {
-            IndividualMajorChords indivdualChordFrames = new IndividualMajorChords(B_MAJOR);
+            IndividualMajorChords indivdualChordFrames = new IndividualMajorChords(B_MAJOR, cp);
         }
         dispose();
     }

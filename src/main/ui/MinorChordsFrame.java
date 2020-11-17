@@ -1,5 +1,6 @@
 package ui;
 
+import model.ChordProgression;
 import model.MinorChord;
 
 import javax.swing.*;
@@ -20,9 +21,11 @@ public class MinorChordsFrame extends JFrame implements ActionListener {
     public static final MinorChord G_MINOR = new MinorChord("GMinor", "G", "Bb", "D");
     public static final MinorChord A_MINOR = new MinorChord("AMinor", "A", "C", "E");
     public static final MinorChord B_MINOR = new MinorChord("BMinor", "B", "D", "F#");
+    private ChordProgression cp;
 
 
-    public MinorChordsFrame() {
+    public MinorChordsFrame(ChordProgression chordProgression) {
+        this.cp = chordProgression;
         minorChordFrame = new JFrame();
         setSize(new Dimension(500, 500));
         pack();
@@ -72,19 +75,19 @@ public class MinorChordsFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("CMinor")) {
-            IndividualMinorChords individualMinorChords = new IndividualMinorChords(C_MINOR);
+            IndividualMinorChords individualMinorChords = new IndividualMinorChords(C_MINOR, cp);
         } else if (e.getActionCommand().equals("DMinor")) {
-            IndividualMinorChords individualMinorChords = new IndividualMinorChords(D_MINOR);
+            IndividualMinorChords individualMinorChords = new IndividualMinorChords(D_MINOR, cp);
         } else if (e.getActionCommand().equals("EMinor")) {
-            IndividualMinorChords individualMinorChords = new IndividualMinorChords(E_MINOR);
+            IndividualMinorChords individualMinorChords = new IndividualMinorChords(E_MINOR, cp);
         } else if (e.getActionCommand().equals("FMinor")) {
-            IndividualMinorChords individualMinorChords = new IndividualMinorChords(F_MINOR);
+            IndividualMinorChords individualMinorChords = new IndividualMinorChords(F_MINOR, cp);
         } else if (e.getActionCommand().equals("GMinor")) {
-            IndividualMinorChords individualMinorChords = new IndividualMinorChords(G_MINOR);
+            IndividualMinorChords individualMinorChords = new IndividualMinorChords(G_MINOR, cp);
         } else if (e.getActionCommand().equals("AMinor")) {
-            IndividualMinorChords individualMinorChords = new IndividualMinorChords(A_MINOR);
+            IndividualMinorChords individualMinorChords = new IndividualMinorChords(A_MINOR, cp);
         } else if (e.getActionCommand().equals("BMinor")) {
-            IndividualMinorChords individualMinorChords = new IndividualMinorChords(B_MINOR);
+            IndividualMinorChords individualMinorChords = new IndividualMinorChords(B_MINOR, cp);
         }
         dispose();
     }

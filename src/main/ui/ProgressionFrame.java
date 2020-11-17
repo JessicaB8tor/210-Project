@@ -2,7 +2,6 @@ package ui;
 
 import model.Chord;
 import model.ChordProgression;
-import model.MajorChord;
 import persistance.JsonReader;
 import persistance.JsonWriter;
 
@@ -10,20 +9,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.function.ToDoubleBiFunction;
+
 
 public class ProgressionFrame extends JFrame implements ActionListener {
     public JFrame progressionFrame;
     public JPanel progressionPanel;
-    private MyProgressionFrame myProgressionFrame;
+    private ViewProgressionFrame myProgressionFrame;
     private JsonWriter jsonWriter = new JsonWriter("My Progression");
-    private ChordProgression progression;
     private JsonReader jsonReader = new JsonReader("My Progression");
     private static final String JSON_STORE = "./data/Progression.json";
-    private Chord chord;
-    private String  name;
+    private ChordProgression progressionForpf;
+    private IndividualMinorChords individualMinorChords;
 
 
     public ProgressionFrame() {
@@ -64,26 +60,23 @@ public class ProgressionFrame extends JFrame implements ActionListener {
 
     }
 
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand().equals("Save Current Progression")) {
-            saveProgression();
-            JLabel label = new JLabel("Saved!");
-            progressionFrame.add(label);
+        /*
+        if (e.getActionCommand().equals("View My Chord Progression")) {
+            for (Chord c: individualMinorChords.myProgression.getChords()) {
+                JLabel chordName = new JLabel(c.getName());
+                progressionFrame.add(chordName);
 
-
-        } else if (e.getActionCommand().equals("Load Chord Progression")) {
-            try {
-                GuitarTheoryApp guitarTheoryApp = new GuitarTheoryApp();
-                guitarTheoryApp.loadProgression();
-            } catch (FileNotFoundException fileNotFoundException) {
-                fileNotFoundException.printStackTrace();
             }
-        } else if (e.getActionCommand().equals("View My Chord Progrgession")) {
 
         }
+
+         */
     }
 
+    /*
     public void saveProgression() {
         try {
             jsonWriter.open();
@@ -93,10 +86,12 @@ public class ProgressionFrame extends JFrame implements ActionListener {
         } catch (FileNotFoundException e) {
             //System.out.println("Unable to write to file: " + JSON_STORE);
         }
+
     }
 
     // MODIFIES: this
     // EFFECTS: loads chord progression from file
+
     public void loadProgression() {
         try {
             progression = jsonReader.read();
@@ -107,7 +102,8 @@ public class ProgressionFrame extends JFrame implements ActionListener {
             JLabel label = new JLabel("Unable to read from file: " + JSON_STORE);
             //System.out.println("Unable to read from file: " + JSON_STORE);
         }
-    }
 
+     */
 }
+
 

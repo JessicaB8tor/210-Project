@@ -22,18 +22,19 @@ public class IndividualMinorChords extends JFrame implements ActionListener {
         this.chord = chord;
         frame = new JFrame(chord.getName());
         setSize(new Dimension(500, 500));
-        pack();
         setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setPanel();
         showNotes();
         getContentPane().add(panel);
+        pack();
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
     public void setPanel() {
         panel = new JPanel();
-        panel.setPreferredSize(new Dimension(500, 500));
+        panel.setPreferredSize(new Dimension(1920, 1080));
         panel.setLayout(new GridLayout(4, 1));
         panel.setBackground(Color.WHITE);
         frame.getContentPane().add(panel);

@@ -69,9 +69,8 @@ public class SaveFrame extends JFrame implements ActionListener {
 
         } else if (e.getActionCommand().equals("No")) {
             GuitarTheoryAppGUI guitarTheoryAppGUI = new GuitarTheoryAppGUI();
-            dispose();
         }
-
+        dispose();
     }
 }
 

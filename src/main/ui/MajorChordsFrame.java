@@ -27,19 +27,20 @@ public class MajorChordsFrame extends JFrame implements ActionListener {
     public MajorChordsFrame(ChordProgression chordProgression) {
         this.cp = chordProgression;
         majorChordsFrame = new JFrame();
-        setSize(new Dimension(500, 500));
-        pack();
+        setSize(new Dimension(1000, 1000));
         setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setChordPanel();
         buttonSetup();
         getContentPane().add(majorChordsPanel);
+        pack();
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
     public void setChordPanel() {
         majorChordsPanel = new JPanel();
-        majorChordsPanel.setPreferredSize(new Dimension(500, 500));
+        majorChordsPanel.setPreferredSize(new Dimension(1920, 1080));
         majorChordsPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 40, 40));
         majorChordsPanel.setBackground(Color.BLACK);
         majorChordsFrame.getContentPane().add(majorChordsPanel);
@@ -67,6 +68,7 @@ public class MajorChordsFrame extends JFrame implements ActionListener {
         for (JButton button : buttons) {
             button.setPreferredSize(new Dimension(300, 300));
             button.addActionListener(this);
+            button.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 30));
             majorChordsPanel.add(button);
         }
 

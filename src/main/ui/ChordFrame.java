@@ -1,7 +1,5 @@
 package ui;
 
-
-import model.Chord;
 import model.ChordProgression;
 
 import javax.swing.*;
@@ -12,42 +10,38 @@ import java.awt.event.ActionListener;
 
 public class ChordFrame extends JFrame implements ActionListener {
     private JFrame chordFrame;
-    private JPanel chordPanel;
     private ChordProgression cp;
     private ImageIcon image;
+    private JLabel imageLabel;
 
 
     public ChordFrame(ChordProgression cp1) {
         this.cp = cp1;
         chordFrame = new JFrame();
-        pack();
         setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setChordPanel();
+        image = new ImageIcon("./data/prettystrat.jpg");
+        imageLabel = new JLabel(image);
+        getContentPane().add(imageLabel);
+        imageLabel.setLayout(new FlowLayout());
         buttonSetup();
-        getContentPane().add(chordPanel);
+        pack();
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
-    public void setChordPanel() {
-        chordPanel = new JPanel();
-        chordPanel.setPreferredSize(new Dimension(500, 500));
-        chordPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 250, 250));
-        chordPanel.setBackground(Color.BLACK);
-        chordFrame.getContentPane().add(chordPanel);
-    }
-
-
     public void buttonSetup() {
         JButton majorChordsButton = new JButton("Major Chords");
-        majorChordsButton.setPreferredSize(new Dimension(300, 300));
+        majorChordsButton.setPreferredSize(new Dimension(300, 50));
+        majorChordsButton.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 30));
         majorChordsButton.addActionListener(this);
-        chordPanel.add(majorChordsButton);
+        imageLabel.add(majorChordsButton);
 
         JButton minorChordsButton = new JButton("Minor Chords");
-        minorChordsButton.setPreferredSize(new Dimension(300, 300));
+        minorChordsButton.setPreferredSize(new Dimension(300, 50));
+        minorChordsButton.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 30));
         minorChordsButton.addActionListener(this);
-        chordPanel.add(minorChordsButton);
+        imageLabel.add(minorChordsButton);
 
 
     }

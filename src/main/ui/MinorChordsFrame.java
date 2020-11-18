@@ -28,18 +28,19 @@ public class MinorChordsFrame extends JFrame implements ActionListener {
         this.cp = chordProgression;
         minorChordFrame = new JFrame();
         setSize(new Dimension(500, 500));
-        pack();
         setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setChordPanel();
         buttonSetup();
         getContentPane().add(minorChordPanel);
+        pack();
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
     public void setChordPanel() {
         minorChordPanel = new JPanel();
-        minorChordPanel.setPreferredSize(new Dimension(500, 500));
+        minorChordPanel.setPreferredSize(new Dimension(1920, 1080));
         minorChordPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 40, 40));
         minorChordPanel.setBackground(Color.BLACK);
         minorChordFrame.getContentPane().add(minorChordPanel);
@@ -67,6 +68,7 @@ public class MinorChordsFrame extends JFrame implements ActionListener {
         for (JButton button : buttons) {
             button.setPreferredSize(new Dimension(300, 300));
             button.addActionListener(this);
+            button.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 30));
             minorChordPanel.add(button);
         }
 

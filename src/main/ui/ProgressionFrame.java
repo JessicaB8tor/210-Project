@@ -67,8 +67,7 @@ public class ProgressionFrame extends JFrame implements ActionListener {
         } else if (e.getActionCommand().equals("Load Chord Progression")) {
             GuitarTheoryAppGUI guitarTheoryAppGUI = new GuitarTheoryAppGUI();
             guitarTheoryAppGUI.loadProgression();
-
-
+            dispose();
         }
 
     }

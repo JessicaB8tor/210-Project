@@ -14,12 +14,12 @@ public class ChordFrame extends JFrame implements ActionListener {
     private JFrame chordFrame;
     private JPanel chordPanel;
     private ChordProgression cp;
+    private ImageIcon image;
 
 
     public ChordFrame(ChordProgression cp1) {
         this.cp = cp1;
         chordFrame = new JFrame();
-        setSize(new Dimension(500, 500));
         pack();
         setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,6 +36,7 @@ public class ChordFrame extends JFrame implements ActionListener {
         chordPanel.setBackground(Color.BLACK);
         chordFrame.getContentPane().add(chordPanel);
     }
+
 
     public void buttonSetup() {
         JButton majorChordsButton = new JButton("Major Chords");

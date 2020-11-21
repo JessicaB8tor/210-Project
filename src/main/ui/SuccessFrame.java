@@ -68,7 +68,7 @@ public class SuccessFrame extends JFrame implements ActionListener {
         if (e.getActionCommand().equals("View Chord Progression")) {
             viewProgressionFrame = new ViewProgressionFrame(cp);
         } else if (e.getActionCommand().equals("Home")) {
-            GuitarTheoryAppGUI guitarTheoryApp = new GuitarTheoryAppGUI();
+            SaveFrame saveFrame = new SaveFrame(cp);
         }
         dispose();
     }

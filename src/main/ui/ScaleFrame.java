@@ -29,8 +29,8 @@ public class ScaleFrame extends JFrame implements ActionListener {
     //EFFECTS: create and setup a new panel
     public void setChordPanel() {
         scalePanel = new JPanel();
-        scalePanel.setPreferredSize(new Dimension(500, 500));
-        scalePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 250, 250));
+        scalePanel.setPreferredSize(new Dimension(1920, 1080));
+        scalePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 100));
         scalePanel.setBackground(Color.BLACK);
     }
 
@@ -43,8 +43,8 @@ public class ScaleFrame extends JFrame implements ActionListener {
         buttons.add(majorScaleButton);
         buttons.add(mpButton);
         for (JButton button: buttons) {
-            button.setPreferredSize(new Dimension(300, 300));
-            button.setFont(new Font("Coppeerplate Gothic Bold", Font.PLAIN, 100));
+            button.setPreferredSize(new Dimension(500, 500));
+            button.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 25));
             button.addActionListener(this);
             scalePanel.add(button);
         }

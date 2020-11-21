@@ -45,6 +45,12 @@ public class ChordProgression implements Writable {
 
     }
 
+    //MODIFIES: this
+    //EFFECTS: resets progression so it is empty
+    public void resetProgression() {
+        progression = new ArrayList<Chord>();
+    }
+
     //EFFECTS: returns count of how many chords in given progression
     public int length() {
         return progression.size();

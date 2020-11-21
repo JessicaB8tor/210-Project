@@ -161,4 +161,15 @@ public class ChordProgressionTest {
         assertEquals("Empty", cp.getAllNames().get(0));
     }
 
+    @Test
+    public void testResetProgression() {
+        cp.addToProgression(cMajor);
+        cp.addToProgression(cMajor);
+        cp.addToProgression(dMajor);
+        assertEquals(3, cp.length());
+        cp.resetProgression();
+        assertEquals(0, cp.length());
+
+    }
+
 }

@@ -8,27 +8,35 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
+//Frame that displays notes of major chords and option to save to progression
 public class IndividualMajorChords extends JFrame implements ActionListener {
     public JFrame frame;
     public JPanel panel;
     public Chord chord;
     public ChordProgression myProgression;
 
+    //Constructs a new frame
     public IndividualMajorChords(MajorChord chord, ChordProgression chordProgression) {
         myProgression = chordProgression;
         this.chord = chord;
         frame = new JFrame(chord.getName());
         setSize(new Dimension(500, 500));
-        pack();
         setLayout(new BorderLayout());
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setPanel();
         showNotes();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().add(panel);
+        pack();
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
+
+    //MODIFIES: this
+    //EFFECTS: creates a new panel and sets it up
     public void setPanel() {
         panel = new JPanel();
         panel.setPreferredSize(new Dimension(1920, 1080));
@@ -37,6 +45,8 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         frame.getContentPane().add(panel);
     }
 
+    //MODIFIES: this
+    //EFFECTS: Displays notes for each chord/adds button and adds to panel
     public void showNotes() {
         if (chord.getName().equals("CMajor")) {
             cmajor();
@@ -60,112 +70,128 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
     }
 
 
+    //MODIFIES: this
+    //EFFECTS: displays notes in a CMajor chord
     public void cmajor() {
         Chord cmajor = new MajorChord("CMajor", "C", "E", "G");
         JLabel cnote = new JLabel("C");
         JLabel enote = new JLabel("E");
         JLabel gnote = new JLabel("G");
-        cnote.setHorizontalAlignment(JLabel.CENTER);
-        enote.setHorizontalAlignment(JLabel.CENTER);
-        gnote.setHorizontalAlignment(JLabel.CENTER);
-        cnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        enote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        gnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        panel.add(cnote);
-        panel.add(enote);
-        panel.add(gnote);
+        List<JLabel> notes = new ArrayList<>();
+        notes.add(cnote);
+        notes.add(enote);
+        notes.add(gnote);
+        for (JLabel note: notes) {
+            note.setHorizontalAlignment(JLabel.CENTER);
+            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+            panel.add(note);
+        }
     }
 
+    //MODIFIES: this
+    //EFFECTS: displays notes in a DMajor chord
     private void dmajor() {
         JLabel dnote = new JLabel("D");
         JLabel fsharpnote = new JLabel("F#");
         JLabel anote = new JLabel("A");
-        dnote.setHorizontalAlignment(JLabel.CENTER);
-        fsharpnote.setHorizontalAlignment(JLabel.CENTER);
-        anote.setHorizontalAlignment(JLabel.CENTER);
-        dnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        fsharpnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        anote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        panel.add(dnote);
-        panel.add(fsharpnote);
-        panel.add(anote);
+        List<JLabel> notes = new ArrayList<>();
+        notes.add(dnote);
+        notes.add(fsharpnote);
+        notes.add(anote);
+        for (JLabel note : notes) {
+            note.setHorizontalAlignment(JLabel.CENTER);
+            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+            panel.add(note);
+        }
     }
 
+    //MODIFIES: this
+    //EFFECTS: displays notes in an EMajor chord
     private void emajor() {
         JLabel enote = new JLabel("E");
         JLabel gsharpnote = new JLabel("G#");
         JLabel bnote = new JLabel("B");
-        enote.setHorizontalAlignment(JLabel.CENTER);
-        gsharpnote.setHorizontalAlignment(JLabel.CENTER);
-        bnote.setHorizontalAlignment(JLabel.CENTER);
-        enote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        gsharpnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        bnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        panel.add(enote);
-        panel.add(gsharpnote);
-        panel.add(bnote);
+        List<JLabel> notes = new ArrayList<>();
+        notes.add(enote);
+        notes.add(gsharpnote);
+        notes.add(bnote);
+        for (JLabel note: notes) {
+            note.setHorizontalAlignment(JLabel.CENTER);
+            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+            panel.add(note);
+        }
     }
 
+    //MODIFIES: this
+    //EFFECTS: displays notes in an FMajor chord
     private void fmajor() {
         JLabel fnote = new JLabel("F");
         JLabel anote = new JLabel("A");
         JLabel cnote = new JLabel("C");
-        fnote.setHorizontalAlignment(JLabel.CENTER);
-        anote.setHorizontalAlignment(JLabel.CENTER);
-        cnote.setHorizontalAlignment(JLabel.CENTER);
-        fnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        anote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        cnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        panel.add(fnote);
-        panel.add(anote);
-        panel.add(cnote);
+        List<JLabel> notes = new ArrayList<>();
+        notes.add(fnote);
+        notes.add(anote);
+        notes.add(cnote);
+        for (JLabel note: notes) {
+            note.setHorizontalAlignment(JLabel.CENTER);
+            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+            panel.add(note);
+        }
     }
 
+    //MODIFIES: this
+    //EFFECTS: displays notes in a GMajor chord
     private void gmajor() {
         JLabel gnote = new JLabel("G");
         JLabel bnote = new JLabel("B");
         JLabel dnote = new JLabel("D");
-        gnote.setHorizontalAlignment(JLabel.CENTER);
-        bnote.setHorizontalAlignment(JLabel.CENTER);
-        dnote.setHorizontalAlignment(JLabel.CENTER);
-        gnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        bnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        dnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        panel.add(gnote);
-        panel.add(bnote);
-        panel.add(dnote);
+        List<JLabel> notes = new ArrayList<>();
+        notes.add(gnote);
+        notes.add(bnote);
+        notes.add(dnote);
+        for (JLabel note: notes) {
+            note.setHorizontalAlignment(JLabel.CENTER);
+            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+            panel.add(note);
+        }
     }
 
+    //MODIFIES: this
+    //EFFECTS: displays notes in an AMajor chord
     private void amajor() {
         JLabel anote = new JLabel("A");
         JLabel csharpnote = new JLabel("C#");
         JLabel enote = new JLabel("E");
-        anote.setHorizontalAlignment(JLabel.CENTER);
-        csharpnote.setHorizontalAlignment(JLabel.CENTER);
-        enote.setHorizontalAlignment(JLabel.CENTER);
-        anote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        csharpnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        enote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        panel.add(anote);
-        panel.add(csharpnote);
-        panel.add(enote);
+        List<JLabel> notes = new ArrayList<>();
+        notes.add(anote);
+        notes.add(csharpnote);
+        notes.add(enote);
+        for (JLabel note: notes) {
+            note.setHorizontalAlignment(JLabel.CENTER);
+            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+            panel.add(note);
+        }
     }
 
+    //MODIFIES: this
+    //EFFECTS: displays notes in a BMajor chord
     private void bmajor() {
         JLabel bnote = new JLabel("B");
         JLabel dsharpnote = new JLabel("D#");
         JLabel fsharpnote = new JLabel("F#");
-        bnote.setHorizontalAlignment(JLabel.CENTER);
-        dsharpnote.setHorizontalAlignment(JLabel.CENTER);
-        fsharpnote.setHorizontalAlignment(JLabel.CENTER);
-        bnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        dsharpnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        fsharpnote.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
-        panel.add(bnote);
-        panel.add(dsharpnote);
-        panel.add(fsharpnote);
+        List<JLabel> notes = new ArrayList<>();
+        notes.add(bnote);
+        notes.add(dsharpnote);
+        notes.add(fsharpnote);
+        for (JLabel note: notes) {
+            note.setHorizontalAlignment(JLabel.CENTER);
+            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+            panel.add(note);
+        }
     }
 
+    //MODIFIES: this
+    //EFFECTS: switches frames depending on button click
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Add to Chord Progression")) {
@@ -175,12 +201,9 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         }
     }
 
+    //EFFECTS: returns chord progression
     public ChordProgression getChordsList() {
         return myProgression;
-    }
-
-    public Chord getChord() {
-        return chord;
     }
 
 }

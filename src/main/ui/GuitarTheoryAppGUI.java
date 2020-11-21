@@ -25,6 +25,7 @@ public class GuitarTheoryAppGUI extends JFrame implements ActionListener {
     private static final String JSON_STORE = "./data/Progression.json";
 
 
+    //Constructs main frame
     public GuitarTheoryAppGUI() {
         super("Guitar Theory App");
         jsonWriter = new JsonWriter(JSON_STORE);
@@ -68,6 +69,8 @@ public class GuitarTheoryAppGUI extends JFrame implements ActionListener {
         }
     }
 
+    //MODIFIES: this
+    //EFFECTS: switches the frame depending on button pressed
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Chords")) {
@@ -76,18 +79,18 @@ public class GuitarTheoryAppGUI extends JFrame implements ActionListener {
             ScaleFrame scaleFrame = new ScaleFrame();
         } else if (e.getActionCommand().equals("Chord Progression")) {
             ProgressionFrame progressionFrame = new ProgressionFrame(cp1);
-        }
+        } // Todo: add functionlality for favourites
         dispose();
     }
 
+    //MODIFIES: this, data folder
+    //EFFECTS: Saves chord progression to file
     public void saveProgression(ChordProgression chordProgression) {
         try {
             jsonWriter.open();
             jsonWriter.write(chordProgression);
             jsonWriter.close();
-            //System.out.println("Saved " + progression.getName() + " to " + JSON_STORE);
         } catch (FileNotFoundException e) {
-            //System.out.println("Unable to write to file: " + JSON_STORE);
         }
     }
 
@@ -116,7 +119,6 @@ public class GuitarTheoryAppGUI extends JFrame implements ActionListener {
 
 
     public static void main(String[] args) {
-
         new GuitarTheoryAppGUI();
     }
 

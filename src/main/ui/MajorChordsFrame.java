@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
+//Creates a frame with buttons for major chords
 public class MajorChordsFrame extends JFrame implements ActionListener {
     private JFrame majorChordsFrame;
     private JPanel majorChordsPanel;
@@ -24,20 +25,23 @@ public class MajorChordsFrame extends JFrame implements ActionListener {
     private ChordProgression cp;
 
 
+    //Constructs a new frame
     public MajorChordsFrame(ChordProgression chordProgression) {
         this.cp = chordProgression;
         majorChordsFrame = new JFrame();
         setSize(new Dimension(1000, 1000));
         setLayout(new BorderLayout());
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setChordPanel();
         buttonSetup();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().add(majorChordsPanel);
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
+    //MODIFIES: this
+    //EFFECTS: create and setup a new panel
     public void setChordPanel() {
         majorChordsPanel = new JPanel();
         majorChordsPanel.setPreferredSize(new Dimension(1920, 1080));
@@ -46,6 +50,8 @@ public class MajorChordsFrame extends JFrame implements ActionListener {
         majorChordsFrame.getContentPane().add(majorChordsPanel);
     }
 
+    //MODIFIES: this
+    //EFFECTS: setup of buttons
     public void buttonSetup() {
         buttons = new ArrayList<>();
 
@@ -71,9 +77,10 @@ public class MajorChordsFrame extends JFrame implements ActionListener {
             button.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 30));
             majorChordsPanel.add(button);
         }
-
     }
 
+    //MODIFIES: this
+    //EFFECTS: switches frame depending on button clicked
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("CMajor")) {

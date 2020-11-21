@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+//Frame that displays options for chord types
 public class ChordFrame extends JFrame implements ActionListener {
     private JFrame chordFrame;
     private ChordProgression cp;
@@ -15,6 +15,7 @@ public class ChordFrame extends JFrame implements ActionListener {
     private JLabel imageLabel;
 
 
+    //Creates a new chord frame
     public ChordFrame(ChordProgression cp1) {
         this.cp = cp1;
         chordFrame = new JFrame();
@@ -30,6 +31,8 @@ public class ChordFrame extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+    //MODIFIES: this
+    //EFFECTS: creates buttons and adds them to the frame
     public void buttonSetup() {
         JButton majorChordsButton = new JButton("Major Chords");
         majorChordsButton.setPreferredSize(new Dimension(300, 50));
@@ -46,6 +49,8 @@ public class ChordFrame extends JFrame implements ActionListener {
 
     }
 
+    //MODIFIES: this
+    //EFFECTS: switches to different frame depending on button clicked
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Major Chords")) {

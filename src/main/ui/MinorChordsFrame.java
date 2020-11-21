@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
+//Creates a frame with buttons for Minor chords
 public class MinorChordsFrame extends JFrame implements ActionListener {
     private JFrame minorChordFrame;
     private JPanel minorChordPanel;
@@ -24,20 +25,23 @@ public class MinorChordsFrame extends JFrame implements ActionListener {
     private ChordProgression cp;
 
 
+    //Constructs a new frame
     public MinorChordsFrame(ChordProgression chordProgression) {
         this.cp = chordProgression;
         minorChordFrame = new JFrame();
         setSize(new Dimension(500, 500));
         setLayout(new BorderLayout());
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setChordPanel();
         buttonSetup();
         getContentPane().add(minorChordPanel);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
+    //MODIFIES: this
+    //EFFECTS: create and setup a new Panel
     public void setChordPanel() {
         minorChordPanel = new JPanel();
         minorChordPanel.setPreferredSize(new Dimension(1920, 1080));
@@ -46,8 +50,10 @@ public class MinorChordsFrame extends JFrame implements ActionListener {
         minorChordFrame.getContentPane().add(minorChordPanel);
     }
 
+    //MODIFIES: this
+    //EFFECTS: create and setup buttons for minor chords
     public void buttonSetup() {
-        buttons = new ArrayList<JButton>();
+        buttons = new ArrayList<>();
 
         JButton cminor = new JButton("CMinor");
         JButton dminor = new JButton("DMinor");
@@ -71,9 +77,10 @@ public class MinorChordsFrame extends JFrame implements ActionListener {
             button.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 30));
             minorChordPanel.add(button);
         }
-
     }
 
+    //MODIFIES: this
+    //EFFECTS: switches frame depending on button pressed
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("CMinor")) {

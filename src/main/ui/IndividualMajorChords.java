@@ -3,6 +3,7 @@ package ui;
 import model.Chord;
 import model.ChordProgression;
 import model.MajorChord;
+import sun.font.BidiUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,6 +28,7 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         setLayout(new BorderLayout());
         setPanel();
         showNotes();
+        buttonSetup();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().add(panel);
         pack();
@@ -40,7 +42,7 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
     public void setPanel() {
         panel = new JPanel();
         panel.setPreferredSize(new Dimension(1920, 1080));
-        panel.setLayout(new GridLayout(4, 1));
+        panel.setLayout(new GridLayout(5, 1));
         panel.setBackground(Color.WHITE);
         frame.getContentPane().add(panel);
     }
@@ -63,10 +65,22 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         } else if (chord.getName().equals("BMajor")) {
             bmajor();
         }
+    }
+
+    //MODIFIES: this
+    //EFFECTS: create and setup buttons
+    private void buttonSetup() {
         JButton addto = new JButton("Add to Chord Progression");
-        addto.setPreferredSize(new Dimension(100, 100));
-        addto.addActionListener(this);
-        panel.add(addto);
+        JButton home = new JButton("Home");
+        List<JButton> buttons = new ArrayList<>();
+        buttons.add(addto);
+        buttons.add(home);
+        for (JButton button: buttons) {
+            button.setPreferredSize(new Dimension(100, 100));
+            button.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 20));
+            button.addActionListener(this);
+            panel.add(button);
+        }
     }
 
 
@@ -83,7 +97,7 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         notes.add(gnote);
         for (JLabel note: notes) {
             note.setHorizontalAlignment(JLabel.CENTER);
-            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 150));
             panel.add(note);
         }
     }
@@ -100,7 +114,7 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         notes.add(anote);
         for (JLabel note : notes) {
             note.setHorizontalAlignment(JLabel.CENTER);
-            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 150));
             panel.add(note);
         }
     }
@@ -117,7 +131,7 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         notes.add(bnote);
         for (JLabel note: notes) {
             note.setHorizontalAlignment(JLabel.CENTER);
-            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 150));
             panel.add(note);
         }
     }
@@ -134,7 +148,7 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         notes.add(cnote);
         for (JLabel note: notes) {
             note.setHorizontalAlignment(JLabel.CENTER);
-            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 150));
             panel.add(note);
         }
     }
@@ -151,7 +165,7 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         notes.add(dnote);
         for (JLabel note: notes) {
             note.setHorizontalAlignment(JLabel.CENTER);
-            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 150));
             panel.add(note);
         }
     }
@@ -168,7 +182,7 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         notes.add(enote);
         for (JLabel note: notes) {
             note.setHorizontalAlignment(JLabel.CENTER);
-            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 150));
             panel.add(note);
         }
     }
@@ -185,7 +199,7 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         notes.add(fsharpnote);
         for (JLabel note: notes) {
             note.setHorizontalAlignment(JLabel.CENTER);
-            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 200));
+            note.setFont(new Font("Comic Sans MS", Font.PLAIN, 150));
             panel.add(note);
         }
     }
@@ -197,8 +211,10 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
         if (e.getActionCommand().equals("Add to Chord Progression")) {
             myProgression.addToProgression(chord);
             SuccessFrame successFrame = new SuccessFrame(chord, myProgression);
-            dispose();
+        } else if (e.getActionCommand().equals("Home")) {
+            SaveFrame saveFrame = new SaveFrame(myProgression);
         }
+        dispose();
     }
 
     //EFFECTS: returns chord progression

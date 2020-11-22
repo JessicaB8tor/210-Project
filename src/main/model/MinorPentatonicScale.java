@@ -40,6 +40,7 @@ public class MinorPentatonicScale extends Scale {
     }
 
     //EFFECTS: Returns all notes in a given Minor Pentatonic scale
+    @Override
     public List<String> getAllNotes() {
         List<String> notes = new ArrayList<>();
         notes.add(note1);
@@ -49,8 +50,6 @@ public class MinorPentatonicScale extends Scale {
         notes.add(note5);
         return notes;
     }
-
-
 }
 
 

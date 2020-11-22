@@ -16,7 +16,7 @@ public class ChordProgression implements Writable {
 
     //EFFECTS: Constructs an empty chord progression idea/list
     public ChordProgression(String name) {
-        progression = new ArrayList<Chord>();
+        progression = new ArrayList<>();
         this.name = name;
 
     }

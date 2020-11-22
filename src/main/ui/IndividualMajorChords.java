@@ -70,10 +70,10 @@ public class IndividualMajorChords extends JFrame implements ActionListener {
     //MODIFIES: this
     //EFFECTS: create and setup buttons
     private void buttonSetup() {
-        JButton addto = new JButton("Add to Chord Progression");
+        JButton addTo = new JButton("Add to Chord Progression");
         JButton home = new JButton("Home");
         List<JButton> buttons = new ArrayList<>();
-        buttons.add(addto);
+        buttons.add(addTo);
         buttons.add(home);
         for (JButton button: buttons) {
             button.setPreferredSize(new Dimension(100, 100));

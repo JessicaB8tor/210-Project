@@ -1,5 +1,6 @@
 package ui;
 
+import jdk.jfr.StackTrace;
 import model.Chord;
 import model.ChordProgression;
 import persistance.JsonReader;
@@ -79,7 +80,7 @@ public class GuitarTheoryAppGUI extends JFrame implements ActionListener {
             ScaleFrame scaleFrame = new ScaleFrame();
         } else if (e.getActionCommand().equals("Chord Progression")) {
             ProgressionFrame progressionFrame = new ProgressionFrame(cp1);
-        } // Todo: add functionlality for favourites
+        } // Todo: add functionality for favourites
         dispose();
     }
 
@@ -91,6 +92,7 @@ public class GuitarTheoryAppGUI extends JFrame implements ActionListener {
             jsonWriter.write(chordProgression);
             jsonWriter.close();
         } catch (FileNotFoundException e) {
+            System.out.println("File Not Found exception was caught");
         }
     }
 

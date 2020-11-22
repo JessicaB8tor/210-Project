@@ -40,6 +40,16 @@ expanding my knowledge on theory and programming at the same time!
 ##Phase 2
 - As a user, I want to be able to save "My Chord Progression"
 - As a user, I want to be able to load "My Chord Progression" from file
+##Phase 4
+- Phase 4: Task 2:
+ A Type hierarchy
+ 
+The MajorScale and MinorPentatonicScale classes both
+extend the abstract Scale class. The abstract method 
+getAllNotes() is overrode in both subclasses because 
+the minor pentatonic scale includes only 5 notes where as
+the major scale includes 7, requiring a slightly different
+implementation of the method.
 
 
 

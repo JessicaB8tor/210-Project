@@ -36,7 +36,7 @@ public class MajorScale extends Scale {
         this.note5 = note5;
         this.note6 = note6;
         this.note7 = note7;
-        MAJOR_SCALES = new ArrayList<MajorScale>();
+        MAJOR_SCALES = new ArrayList<>();
         MAJOR_SCALES.add(C_MAJOR);
         MAJOR_SCALES.add(D_MAJOR);
         MAJOR_SCALES.add(E_MAJOR);
@@ -61,6 +61,7 @@ public class MajorScale extends Scale {
     }
 
     //EFFECTS: returns all notes in a given major scale
+    @Override
     public List<String> getAllNotes() {
         List<String> notes = new ArrayList<>();
         notes.add(note1);
@@ -71,6 +72,5 @@ public class MajorScale extends Scale {
         notes.add(note6);
         notes.add(note7);
         return notes;
-
     }
 }

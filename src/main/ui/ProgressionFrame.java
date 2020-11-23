@@ -1,8 +1,6 @@
 package ui;
 
 import model.ChordProgression;
-import persistance.JsonReader;
-import persistance.JsonWriter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,9 +14,6 @@ public class ProgressionFrame extends JFrame implements ActionListener {
     private JFrame progressionFrame;
     private JPanel progressionPanel;
     private ChordProgression chordProgression;
-    private JsonWriter jsonWriter = new JsonWriter("My Progression");
-    private JsonReader jsonReader = new JsonReader("My Progression");
-    private static final String JSON_STORE = "./data/Progression.json";
 
 
     //Constructs a new frame

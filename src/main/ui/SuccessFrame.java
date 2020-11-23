@@ -15,7 +15,6 @@ public class SuccessFrame extends JFrame implements ActionListener {
     private JFrame frame;
     private JPanel panel;
     private Chord chord;
-    private ViewProgressionFrame viewProgressionFrame;
     private ChordProgression cp;
 
     //Constructs a new frame
@@ -66,7 +65,7 @@ public class SuccessFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("View Chord Progression")) {
-            viewProgressionFrame = new ViewProgressionFrame(cp);
+            ViewProgressionFrame viewProgressionFrame = new ViewProgressionFrame(cp);
         } else if (e.getActionCommand().equals("Home")) {
             SaveFrame saveFrame = new SaveFrame(cp);
         }

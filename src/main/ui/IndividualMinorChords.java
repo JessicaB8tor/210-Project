@@ -19,7 +19,7 @@ public class IndividualMinorChords extends JFrame implements ActionListener {
     private ChordProgression myProgression;
 
     //Constructs a new frame
-    public IndividualMinorChords(MinorChord chord, ChordProgression chordProgression) {
+    public IndividualMinorChords(Chord chord, ChordProgression chordProgression) {
         myProgression = chordProgression;
         this.chord = chord;
         frame = new JFrame(chord.getName());

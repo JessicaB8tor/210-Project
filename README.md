@@ -40,8 +40,7 @@ expanding my knowledge on theory and programming at the same time!
 ##Phase 2
 - As a user, I want to be able to save "My Chord Progression"
 - As a user, I want to be able to load "My Chord Progression" from file
-##Phase 4
-- Phase 4: Task 2:
+##Phase 4: Task 2
  A Type hierarchy
  
 The MajorScale and MinorPentatonicScale classes both
@@ -50,6 +49,21 @@ getAllNotes() is overrode in both subclasses because
 the minor pentatonic scale includes only 5 notes where as
 the major scale includes 7, requiring a slightly different
 implementation of the method.
+
+##Phase4: Task 3
+If I had more time I would definitely do some refactoring
+to all the frames that have a ChordProgression association.
+I could create an abstract class/interface to abstract
+out similarities between the IndividualMajorChords class and 
+the IndividualMinorChords class. These two classes 
+have pretty much the same functionality except one deals
+with major chords and one deals with minor chords.
+
+The MajorChordsFrame class and the MinorChordsFrame class
+are very similar too, and could definitely use an abstract
+super class or interface to abstract out all the copied
+code between the two classes.
+
 
 
 

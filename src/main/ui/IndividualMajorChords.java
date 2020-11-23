@@ -3,7 +3,6 @@ package ui;
 import model.Chord;
 import model.ChordProgression;
 import model.MajorChord;
-import sun.font.BidiUtils;
 
 import javax.swing.*;
 import java.awt.*;

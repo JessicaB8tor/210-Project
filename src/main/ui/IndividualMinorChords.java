@@ -17,12 +17,10 @@ public class IndividualMinorChords extends JFrame implements ActionListener {
     private JPanel panel;
     private Chord chord;
     private ChordProgression myProgression;
-    private ViewProgressionFrame viewProgressionFrame;
 
     //Constructs a new frame
     public IndividualMinorChords(MinorChord chord, ChordProgression chordProgression) {
         myProgression = chordProgression;
-        viewProgressionFrame = new ViewProgressionFrame(myProgression);
         this.chord = chord;
         frame = new JFrame(chord.getName());
         setSize(new Dimension(500, 500));

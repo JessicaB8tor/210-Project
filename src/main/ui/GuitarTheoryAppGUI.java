@@ -1,6 +1,5 @@
 package ui;
 
-import jdk.jfr.StackTrace;
 import model.Chord;
 import model.ChordProgression;
 import persistance.JsonReader;

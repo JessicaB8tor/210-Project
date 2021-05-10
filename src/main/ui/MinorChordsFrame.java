@@ -97,8 +97,8 @@ public class MinorChordsFrame extends JFrame implements ActionListener {
             IndividualMinorChords individualMinorChords = new IndividualMinorChords(A_MINOR, cp);
         } else if (e.getActionCommand().equals("BMinor")) {
             IndividualMinorChords individualMinorChords = new IndividualMinorChords(B_MINOR, cp);
+            dispose();
         }
-        dispose();
     }
 }
 
